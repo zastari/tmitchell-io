@@ -1,0 +1,1751 @@
+--------------------------------------------------------------------------------
+Command:            /usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib64/mysql/plugin --user=mysql --log-error=/var/log/mysqld.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/lib/mysql/mysql.sock
+Massif arguments:   (none)
+ms_print arguments: massif.out.20237
+--------------------------------------------------------------------------------
+
+
+    MB
+122.3^                                                   #                    
+     |                                                   #                    
+     |                                                   #                    
+     |                              @@:@:::::::::@:::::::#       ::::@:       
+     |                              @ :@:::::::::@:::: : #:::@:::::: @::      
+     |                              @ :@:::::::::@:::: : #:::@:::::: @::      
+     |                         ::::@@ :@:::::::::@:::: : #:::@:::::: @::::    
+     |                      :@::: :@@ :@:::::::::@:::: : #:::@:::::: @::::::@:
+     |                 ::::::@::: :@@ :@:::::::::@:::: : #:::@:::::: @::::::@:
+     |               ::::  ::@::: :@@ :@:::::::::@:::: : #:::@:::::: @::::::@:
+     |              @: ::  ::@::: :@@ :@:::::::::@:::: : #:::@:::::: @::::::@:
+     |             :@: ::  ::@::: :@@ :@:::::::::@:::: : #:::@:::::: @::::::@:
+     |             :@: ::  ::@::: :@@ :@:::::::::@:::: : #:::@:::::: @::::::@:
+     |          ::::@: ::  ::@::: :@@ :@:::::::::@:::: : #:::@:::::: @::::::@:
+     |          : ::@: ::  ::@::: :@@ :@:::::::::@:::: : #:::@:::::: @::::::@:
+     |          : ::@: ::  ::@::: :@@ :@:::::::::@:::: : #:::@:::::: @::::::@:
+     |        ::: ::@: ::  ::@::: :@@ :@:::::::::@:::: : #:::@:::::: @::::::@:
+     |        ::: ::@: ::  ::@::: :@@ :@:::::::::@:::: : #:::@:::::: @::::::@:
+     |       :::: ::@: ::  ::@::: :@@ :@:::::::::@:::: : #:::@:::::: @::::::@:
+     |       :::: ::@: ::  ::@::: :@@ :@:::::::::@:::: : #:::@:::::: @::::::@:
+   0 +----------------------------------------------------------------------->Mi
+     0                                                                   106.9
+
+Number of snapshots: 75
+ Detailed snapshots: [11, 18, 25, 26, 29, 40, 46 (peak), 52, 62, 72]
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  0              0                0                0             0            0
+  1      2,783,859              584              568            16            0
+  2      4,621,593           28,088           27,755           333            0
+  3      6,511,578           48,912           48,523           389            0
+  4     10,047,966          100,152           99,723           429            0
+  5     12,290,910       15,349,488       15,348,875           613            0
+  6     13,849,574       29,692,504       29,691,403         1,101            0
+  7     14,900,656       29,945,984       29,944,843         1,141            0
+  8     16,274,121       47,302,112       47,300,875         1,237            0
+  9     18,998,068       47,449,592       47,448,331         1,261            0
+ 10     20,553,100       59,158,280       59,156,499         1,781            0
+ 11     21,982,794       64,170,424       64,168,499         1,925            0
+100.00% (64,168,499B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->99.92% (64,119,976B) 0xB15288: pfs_malloc(unsigned long, int) (pfs_global.cc:57)
+| ->23.67% (15,190,272B) 0xB1B391: init_table_share(unsigned int) (pfs_instr_class.cc:344)
+| | ->23.67% (15,190,272B) 0xB1E992: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:88)
+| |   ->23.67% (15,190,272B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->23.67% (15,190,272B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->14.78% (9,485,568B) 0xB1692C: init_instruments(PFS_global_param const*) (pfs_instr.cc:407)
+| | ->14.78% (9,485,568B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->14.78% (9,485,568B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->14.78% (9,485,568B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->10.27% (6,587,200B) 0xB110BF: PFS_connection_slice::alloc_statements_slice(unsigned int) (pfs_con_slice.cc:83)
+| | ->05.13% (3,293,600B) 0xB15645: init_host(PFS_global_param const*) (pfs_host.cc:94)
+| | | ->05.13% (3,293,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->05.13% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->05.13% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->05.13% (3,293,600B) 0xB20BB5: init_user(PFS_global_param const*) (pfs_user.cc:94)
+| |   ->05.13% (3,293,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| |     ->05.13% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->05.13% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->09.19% (5,898,240B) 0xB168D0: init_instruments(PFS_global_param const*) (pfs_instr.cc:389)
+| | ->09.19% (5,898,240B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->09.19% (5,898,240B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->09.19% (5,898,240B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->08.91% (5,716,480B) 0xB16A9D: init_instruments(PFS_global_param const*) (pfs_instr.cc:325)
+| | ->08.91% (5,716,480B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->08.91% (5,716,480B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->08.91% (5,716,480B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.50% (3,529,728B) 0xB167BB: init_instruments(PFS_global_param const*) (pfs_instr.cc:356)
+| | ->05.50% (3,529,728B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->05.50% (3,529,728B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.50% (3,529,728B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.49% (3,522,472B) in 25 places, all below massif's threshold (01.00%)
+| | 
+| ->04.60% (2,949,120B) 0xB16713: init_instruments(PFS_global_param const*) (pfs_instr.cc:435)
+| | ->04.60% (2,949,120B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->04.60% (2,949,120B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->04.60% (2,949,120B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->03.82% (2,451,200B) 0xB10F7F: PFS_connection_slice::alloc_waits_slice(unsigned int) (pfs_con_slice.cc:43)
+| | ->01.91% (1,225,600B) 0xB1568D: init_host(PFS_global_param const*) (pfs_host.cc:78)
+| | | ->01.91% (1,225,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->01.91% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.91% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.91% (1,225,600B) 0xB20BFD: init_user(PFS_global_param const*) (pfs_user.cc:78)
+| |   ->01.91% (1,225,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| |     ->01.91% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->01.91% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->03.19% (2,048,000B) 0xB1407D: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:63)
+| | ->03.19% (2,048,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+| |   ->03.19% (2,048,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->03.19% (2,048,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.81% (1,800,128B) 0xB1666D: init_instruments(PFS_global_param const*) (pfs_instr.cc:311)
+| | ->02.81% (1,800,128B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->02.81% (1,800,128B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.81% (1,800,128B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.15% (1,382,400B) 0xB1685D: init_instruments(PFS_global_param const*) (pfs_instr.cc:377)
+| | ->02.15% (1,382,400B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->02.15% (1,382,400B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.15% (1,382,400B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.60% (1,024,000B) 0xB1412B: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:78)
+| | ->01.60% (1,024,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+| |   ->01.60% (1,024,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.60% (1,024,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.50% (960,000B) 0xB1101F: PFS_connection_slice::alloc_stages_slice(unsigned int) (pfs_con_slice.cc:63)
+| | ->01.50% (960,000B) in 2 places, all below massif's threshold (01.00%)
+| |   
+| ->01.26% (811,008B) 0xB16765: init_instruments(PFS_global_param const*) (pfs_instr.cc:339)
+| | ->01.26% (811,008B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->01.26% (811,008B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.26% (811,008B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.19% (764,160B) 0xB16638: init_instruments(PFS_global_param const*) (pfs_instr.cc:290)
+|   ->01.19% (764,160B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+|     ->01.19% (764,160B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+|       ->01.19% (764,160B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+|         
+->00.08% (48,523B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 12     23,414,088       69,195,400       69,193,299         2,101            0
+ 13     24,702,078       76,875,448       76,873,299         2,149            0
+ 14     26,605,527       76,972,112       76,969,291         2,821            0
+ 15     28,314,232       77,182,960       77,179,114         3,846            0
+ 16     32,970,679       77,164,632       77,160,809         3,823            0
+ 17     34,873,503       86,785,600       86,777,994         7,606            0
+ 18     36,047,121       88,505,352       88,495,540         9,812            0
+99.99% (88,495,540B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->86.80% (76,824,776B) 0xB15288: pfs_malloc(unsigned long, int) (pfs_global.cc:57)
+| ->17.16% (15,190,272B) 0xB1B391: init_table_share(unsigned int) (pfs_instr_class.cc:344)
+| | ->17.16% (15,190,272B) 0xB1E992: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:88)
+| |   ->17.16% (15,190,272B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->17.16% (15,190,272B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->11.16% (9,880,800B) 0xB110BF: PFS_connection_slice::alloc_statements_slice(unsigned int) (pfs_con_slice.cc:83)
+| | ->03.72% (3,293,600B) 0xB15645: init_host(PFS_global_param const*) (pfs_host.cc:94)
+| | | ->03.72% (3,293,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->03.72% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->03.72% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->03.72% (3,293,600B) 0xB20BB5: init_user(PFS_global_param const*) (pfs_user.cc:94)
+| | | ->03.72% (3,293,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->03.72% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->03.72% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->03.72% (3,293,600B) 0xB103F5: init_account(PFS_global_param const*) (pfs_account.cc:97)
+| |   ->03.72% (3,293,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->03.72% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->03.72% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->10.72% (9,485,568B) 0xB1692C: init_instruments(PFS_global_param const*) (pfs_instr.cc:407)
+| | ->10.72% (9,485,568B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->10.72% (9,485,568B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->10.72% (9,485,568B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->06.66% (5,898,240B) 0xB168D0: init_instruments(PFS_global_param const*) (pfs_instr.cc:389)
+| | ->06.66% (5,898,240B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->06.66% (5,898,240B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->06.66% (5,898,240B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->06.46% (5,716,480B) 0xB16A9D: init_instruments(PFS_global_param const*) (pfs_instr.cc:325)
+| | ->06.46% (5,716,480B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->06.46% (5,716,480B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->06.46% (5,716,480B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.79% (5,123,240B) in 28 places, all below massif's threshold (01.00%)
+| | 
+| ->05.78% (5,120,000B) 0xB11B6C: init_digest(PFS_global_param const*) (pfs_digest.cc:90)
+| | ->05.78% (5,120,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->05.78% (5,120,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.78% (5,120,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->04.15% (3,676,800B) 0xB10F7F: PFS_connection_slice::alloc_waits_slice(unsigned int) (pfs_con_slice.cc:43)
+| | ->01.38% (1,225,600B) 0xB1568D: init_host(PFS_global_param const*) (pfs_host.cc:78)
+| | | ->01.38% (1,225,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->01.38% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.38% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.38% (1,225,600B) 0xB20BFD: init_user(PFS_global_param const*) (pfs_user.cc:78)
+| | | ->01.38% (1,225,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->01.38% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.38% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.38% (1,225,600B) 0xB1043D: init_account(PFS_global_param const*) (pfs_account.cc:81)
+| |   ->01.38% (1,225,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->01.38% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->01.38% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->03.99% (3,529,728B) 0xB167BB: init_instruments(PFS_global_param const*) (pfs_instr.cc:356)
+| | ->03.99% (3,529,728B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->03.99% (3,529,728B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->03.99% (3,529,728B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->03.33% (2,949,120B) 0xB16713: init_instruments(PFS_global_param const*) (pfs_instr.cc:435)
+| | ->03.33% (2,949,120B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->03.33% (2,949,120B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->03.33% (2,949,120B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.89% (2,560,000B) 0xB11B05: init_digest(PFS_global_param const*) (pfs_digest.cc:73)
+| | ->02.89% (2,560,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->02.89% (2,560,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.89% (2,560,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.31% (2,048,000B) 0xB1407D: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:63)
+| | ->02.31% (2,048,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+| |   ->02.31% (2,048,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.31% (2,048,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.03% (1,800,128B) 0xB1666D: init_instruments(PFS_global_param const*) (pfs_instr.cc:311)
+| | ->02.03% (1,800,128B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->02.03% (1,800,128B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.03% (1,800,128B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.63% (1,440,000B) 0xB1101F: PFS_connection_slice::alloc_stages_slice(unsigned int) (pfs_con_slice.cc:63)
+| | ->01.63% (1,440,000B) in 3 places, all below massif's threshold (01.00%)
+| |   
+| ->01.56% (1,382,400B) 0xB1685D: init_instruments(PFS_global_param const*) (pfs_instr.cc:377)
+| | ->01.56% (1,382,400B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->01.56% (1,382,400B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.56% (1,382,400B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.16% (1,024,000B) 0xB1412B: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:78)
+|   ->01.16% (1,024,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+|     ->01.16% (1,024,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+|       ->01.16% (1,024,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+|         
+->11.14% (9,860,785B) 0x8CD2C3: my_malloc (my_malloc.c:38)
+| ->07.75% (6,858,752B) 0x8D8CA9: my_large_malloc (my_largepage.c:64)
+| | ->07.75% (6,858,752B) 0x8BD8D1: init_key_cache (mf_keycache.c:431)
+| |   ->07.75% (6,858,752B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |     ->07.75% (6,858,752B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |       ->07.75% (6,858,752B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |         ->07.75% (6,858,752B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |           ->07.75% (6,858,752B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |             
+| ->01.73% (1,529,632B) 0x8BD8E7: init_key_cache (mf_keycache.c:438)
+| | ->01.73% (1,529,632B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |   ->01.73% (1,529,632B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |     ->01.73% (1,529,632B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |       ->01.73% (1,529,632B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |         ->01.73% (1,529,632B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |           
+| ->01.17% (1,031,680B) 0x699963: Query_cache::init_cache() (sql_cache.cc:2551)
+| | ->01.17% (1,031,680B) 0x699D26: Query_cache::resize(unsigned long) (sql_cache.cc:1358)
+| |   ->01.17% (1,031,680B) 0x59163B: init_server_components() (mysqld.cc:4934)
+| |     ->01.17% (1,031,680B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |       ->01.17% (1,031,680B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->00.50% (440,721B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->01.89% (1,668,575B) 0x9E1AF6: ut_malloc_low(unsigned long, unsigned long) (ut0mem.cc:104)
+| ->01.03% (912,352B) 0xA84A64: hash0_create(unsigned long) (hash0hash.cc:306)
+| | ->01.03% (912,352B) in 4 places, all below massif's threshold (01.00%)
+| |   
+| ->00.85% (756,223B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->00.16% (141,404B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 19     37,480,068       89,000,920       88,962,040        38,880            0
+ 20     38,874,765       89,486,032       89,418,616        67,416            0
+ 21     40,314,796       89,986,920       89,890,040        96,880            0
+ 22     42,015,646       90,578,520       90,446,840       131,680            0
+ 23     43,716,496       91,170,120       91,003,640       166,480            0
+ 24     44,850,349       91,564,520       91,374,840       189,680            0
+ 25     46,054,605       94,427,288       94,219,780       207,508            0
+99.78% (94,219,780B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->81.36% (76,824,776B) 0xB15288: pfs_malloc(unsigned long, int) (pfs_global.cc:57)
+| ->16.09% (15,190,272B) 0xB1B391: init_table_share(unsigned int) (pfs_instr_class.cc:344)
+| | ->16.09% (15,190,272B) 0xB1E992: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:88)
+| |   ->16.09% (15,190,272B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->16.09% (15,190,272B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->10.46% (9,880,800B) 0xB110BF: PFS_connection_slice::alloc_statements_slice(unsigned int) (pfs_con_slice.cc:83)
+| | ->03.49% (3,293,600B) 0xB15645: init_host(PFS_global_param const*) (pfs_host.cc:94)
+| | | ->03.49% (3,293,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->03.49% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->03.49% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->03.49% (3,293,600B) 0xB20BB5: init_user(PFS_global_param const*) (pfs_user.cc:94)
+| | | ->03.49% (3,293,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->03.49% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->03.49% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->03.49% (3,293,600B) 0xB103F5: init_account(PFS_global_param const*) (pfs_account.cc:97)
+| |   ->03.49% (3,293,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->03.49% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->03.49% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->10.05% (9,485,568B) 0xB1692C: init_instruments(PFS_global_param const*) (pfs_instr.cc:407)
+| | ->10.05% (9,485,568B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->10.05% (9,485,568B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->10.05% (9,485,568B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->06.25% (5,898,240B) 0xB168D0: init_instruments(PFS_global_param const*) (pfs_instr.cc:389)
+| | ->06.25% (5,898,240B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->06.25% (5,898,240B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->06.25% (5,898,240B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->06.05% (5,716,480B) 0xB16A9D: init_instruments(PFS_global_param const*) (pfs_instr.cc:325)
+| | ->06.05% (5,716,480B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->06.05% (5,716,480B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->06.05% (5,716,480B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.43% (5,123,240B) in 28 places, all below massif's threshold (01.00%)
+| | 
+| ->05.42% (5,120,000B) 0xB11B6C: init_digest(PFS_global_param const*) (pfs_digest.cc:90)
+| | ->05.42% (5,120,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->05.42% (5,120,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.42% (5,120,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->03.89% (3,676,800B) 0xB10F7F: PFS_connection_slice::alloc_waits_slice(unsigned int) (pfs_con_slice.cc:43)
+| | ->01.30% (1,225,600B) 0xB1568D: init_host(PFS_global_param const*) (pfs_host.cc:78)
+| | | ->01.30% (1,225,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->01.30% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.30% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.30% (1,225,600B) 0xB20BFD: init_user(PFS_global_param const*) (pfs_user.cc:78)
+| | | ->01.30% (1,225,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->01.30% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.30% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.30% (1,225,600B) 0xB1043D: init_account(PFS_global_param const*) (pfs_account.cc:81)
+| |   ->01.30% (1,225,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->01.30% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->01.30% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->03.74% (3,529,728B) 0xB167BB: init_instruments(PFS_global_param const*) (pfs_instr.cc:356)
+| | ->03.74% (3,529,728B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->03.74% (3,529,728B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->03.74% (3,529,728B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->03.12% (2,949,120B) 0xB16713: init_instruments(PFS_global_param const*) (pfs_instr.cc:435)
+| | ->03.12% (2,949,120B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->03.12% (2,949,120B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->03.12% (2,949,120B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.71% (2,560,000B) 0xB11B05: init_digest(PFS_global_param const*) (pfs_digest.cc:73)
+| | ->02.71% (2,560,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->02.71% (2,560,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.71% (2,560,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.17% (2,048,000B) 0xB1407D: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:63)
+| | ->02.17% (2,048,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+| |   ->02.17% (2,048,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.17% (2,048,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.91% (1,800,128B) 0xB1666D: init_instruments(PFS_global_param const*) (pfs_instr.cc:311)
+| | ->01.91% (1,800,128B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->01.91% (1,800,128B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.91% (1,800,128B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.52% (1,440,000B) 0xB1101F: PFS_connection_slice::alloc_stages_slice(unsigned int) (pfs_con_slice.cc:63)
+| | ->01.52% (1,440,000B) in 3 places, all below massif's threshold (01.00%)
+| |   
+| ->01.46% (1,382,400B) 0xB1685D: init_instruments(PFS_global_param const*) (pfs_instr.cc:377)
+| | ->01.46% (1,382,400B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->01.46% (1,382,400B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.46% (1,382,400B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.08% (1,024,000B) 0xB1412B: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:78)
+|   ->01.08% (1,024,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+|     ->01.08% (1,024,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+|       ->01.08% (1,024,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+|         
+->10.44% (9,860,785B) 0x8CD2C3: my_malloc (my_malloc.c:38)
+| ->07.26% (6,858,752B) 0x8D8CA9: my_large_malloc (my_largepage.c:64)
+| | ->07.26% (6,858,752B) 0x8BD8D1: init_key_cache (mf_keycache.c:431)
+| |   ->07.26% (6,858,752B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |     ->07.26% (6,858,752B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |       ->07.26% (6,858,752B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |         ->07.26% (6,858,752B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |           ->07.26% (6,858,752B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |             
+| ->01.62% (1,529,632B) 0x8BD8E7: init_key_cache (mf_keycache.c:438)
+| | ->01.62% (1,529,632B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |   ->01.62% (1,529,632B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |     ->01.62% (1,529,632B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |       ->01.62% (1,529,632B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |         ->01.62% (1,529,632B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |           
+| ->01.09% (1,031,680B) 0x699963: Query_cache::init_cache() (sql_cache.cc:2551)
+| | ->01.09% (1,031,680B) 0x699D26: Query_cache::resize(unsigned long) (sql_cache.cc:1358)
+| |   ->01.09% (1,031,680B) 0x59163B: init_server_components() (mysqld.cc:4934)
+| |     ->01.09% (1,031,680B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |       ->01.09% (1,031,680B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->00.47% (440,721B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->07.75% (7,315,751B) 0x9E1AF6: ut_malloc_low(unsigned long, unsigned long) (ut0mem.cc:104)
+| ->03.60% (3,403,944B) 0xA84A64: hash0_create(unsigned long) (hash0hash.cc:306)
+| | ->02.49% (2,352,480B) 0xA82EF4: ha_create_func(unsigned long, unsigned long, unsigned long) (ha0ha.cc:67)
+| | | ->02.34% (2,213,368B) 0xA0E88B: btr_search_sys_create(unsigned long) (btr0sea.cc:202)
+| | | | ->02.34% (2,213,368B) 0xA18EBE: buf_pool_init(unsigned long, unsigned long) (buf0buf.cc:1543)
+| | | |   ->02.34% (2,213,368B) 0x9BB3AE: innobase_start_or_create_for_mysql() (srv0start.cc:2032)
+| | | |     ->02.34% (2,213,368B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| | | |       ->02.34% (2,213,368B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| | | |         ->02.34% (2,213,368B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| | | |           ->02.34% (2,213,368B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| | | |             ->02.34% (2,213,368B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| | | |               ->02.34% (2,213,368B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| | | |                 ->02.34% (2,213,368B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | | |                   
+| | | ->00.15% (139,112B) in 1+ places, all below ms_print's threshold (01.00%)
+| | | 
+| | ->01.11% (1,051,464B) in 5 places, all below massif's threshold (01.00%)
+| |   
+| ->03.35% (3,163,776B) 0x95005E: os_event_create() (os0sync.cc:370)
+| | ->01.11% (1,050,880B) 0x9C1A0B: mutex_create_func(ib_mutex_t*, char const*) (sync0sync.cc:286)
+| | | ->01.11% (1,048,448B) 0xA1874D: buf_pool_init_instance(buf_pool_t*, unsigned long, unsigned long) (sync0sync.ic:528)
+| | | | ->01.11% (1,048,448B) 0xA18E23: buf_pool_init(unsigned long, unsigned long) (buf0buf.cc:1531)
+| | | |   ->01.11% (1,048,448B) 0x9BB3AE: innobase_start_or_create_for_mysql() (srv0start.cc:2032)
+| | | |     ->01.11% (1,048,448B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| | | |       ->01.11% (1,048,448B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| | | |         ->01.11% (1,048,448B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| | | |           ->01.11% (1,048,448B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| | | |             ->01.11% (1,048,448B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| | | |               ->01.11% (1,048,448B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| | | |                 ->01.11% (1,048,448B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | | |                   
+| | | ->00.00% (2,432B) in 1+ places, all below ms_print's threshold (01.00%)
+| | | 
+| | ->01.11% (1,048,576B) 0x9BFADA: rw_lock_create_func(rw_lock_t*, char const*) (sync0rw.cc:267)
+| | | ->01.11% (1,048,448B) 0xA18786: buf_pool_init_instance(buf_pool_t*, unsigned long, unsigned long) (sync0rw.ic:819)
+| | | | ->01.11% (1,048,448B) 0xA18E23: buf_pool_init(unsigned long, unsigned long) (buf0buf.cc:1531)
+| | | |   ->01.11% (1,048,448B) 0x9BB3AE: innobase_start_or_create_for_mysql() (srv0start.cc:2032)
+| | | |     ->01.11% (1,048,448B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| | | |       ->01.11% (1,048,448B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| | | |         ->01.11% (1,048,448B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| | | |           ->01.11% (1,048,448B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| | | |             ->01.11% (1,048,448B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| | | |               ->01.11% (1,048,448B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| | | |                 ->01.11% (1,048,448B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | | |                   
+| | | ->00.00% (128B) in 1+ places, all below ms_print's threshold (01.00%)
+| | | 
+| | ->01.11% (1,048,576B) 0x9BFAE3: rw_lock_create_func(rw_lock_t*, char const*) (sync0rw.cc:268)
+| | | ->01.11% (1,048,448B) 0xA18786: buf_pool_init_instance(buf_pool_t*, unsigned long, unsigned long) (sync0rw.ic:819)
+| | | | ->01.11% (1,048,448B) 0xA18E23: buf_pool_init(unsigned long, unsigned long) (buf0buf.cc:1531)
+| | | |   ->01.11% (1,048,448B) 0x9BB3AE: innobase_start_or_create_for_mysql() (srv0start.cc:2032)
+| | | |     ->01.11% (1,048,448B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| | | |       ->01.11% (1,048,448B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| | | |         ->01.11% (1,048,448B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| | | |           ->01.11% (1,048,448B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| | | |             ->01.11% (1,048,448B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| | | |               ->01.11% (1,048,448B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| | | |                 ->01.11% (1,048,448B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | | |                   
+| | | ->00.00% (128B) in 1+ places, all below ms_print's threshold (01.00%)
+| | | 
+| | ->00.02% (15,744B) in 1+ places, all below ms_print's threshold (01.00%)
+| | 
+| ->00.79% (748,031B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->00.23% (218,468B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 26     48,132,972      111,894,992      111,681,496       213,496            0
+99.81% (111,681,496B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->68.66% (76,824,776B) 0xB15288: pfs_malloc(unsigned long, int) (pfs_global.cc:57)
+| ->13.58% (15,190,272B) 0xB1B391: init_table_share(unsigned int) (pfs_instr_class.cc:344)
+| | ->13.58% (15,190,272B) 0xB1E992: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:88)
+| |   ->13.58% (15,190,272B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->13.58% (15,190,272B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->08.83% (9,880,800B) 0xB110BF: PFS_connection_slice::alloc_statements_slice(unsigned int) (pfs_con_slice.cc:83)
+| | ->02.94% (3,293,600B) 0xB15645: init_host(PFS_global_param const*) (pfs_host.cc:94)
+| | | ->02.94% (3,293,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->02.94% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->02.94% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->02.94% (3,293,600B) 0xB20BB5: init_user(PFS_global_param const*) (pfs_user.cc:94)
+| | | ->02.94% (3,293,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->02.94% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->02.94% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->02.94% (3,293,600B) 0xB103F5: init_account(PFS_global_param const*) (pfs_account.cc:97)
+| |   ->02.94% (3,293,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->02.94% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->02.94% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->08.48% (9,485,568B) 0xB1692C: init_instruments(PFS_global_param const*) (pfs_instr.cc:407)
+| | ->08.48% (9,485,568B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->08.48% (9,485,568B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->08.48% (9,485,568B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.49% (6,147,240B) in 29 places, all below massif's threshold (01.00%)
+| | 
+| ->05.27% (5,898,240B) 0xB168D0: init_instruments(PFS_global_param const*) (pfs_instr.cc:389)
+| | ->05.27% (5,898,240B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->05.27% (5,898,240B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.27% (5,898,240B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.11% (5,716,480B) 0xB16A9D: init_instruments(PFS_global_param const*) (pfs_instr.cc:325)
+| | ->05.11% (5,716,480B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->05.11% (5,716,480B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.11% (5,716,480B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->04.58% (5,120,000B) 0xB11B6C: init_digest(PFS_global_param const*) (pfs_digest.cc:90)
+| | ->04.58% (5,120,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->04.58% (5,120,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->04.58% (5,120,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->03.29% (3,676,800B) 0xB10F7F: PFS_connection_slice::alloc_waits_slice(unsigned int) (pfs_con_slice.cc:43)
+| | ->01.10% (1,225,600B) 0xB1568D: init_host(PFS_global_param const*) (pfs_host.cc:78)
+| | | ->01.10% (1,225,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->01.10% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.10% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.10% (1,225,600B) 0xB20BFD: init_user(PFS_global_param const*) (pfs_user.cc:78)
+| | | ->01.10% (1,225,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->01.10% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.10% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.10% (1,225,600B) 0xB1043D: init_account(PFS_global_param const*) (pfs_account.cc:81)
+| |   ->01.10% (1,225,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->01.10% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->01.10% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->03.15% (3,529,728B) 0xB167BB: init_instruments(PFS_global_param const*) (pfs_instr.cc:356)
+| | ->03.15% (3,529,728B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->03.15% (3,529,728B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->03.15% (3,529,728B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.64% (2,949,120B) 0xB16713: init_instruments(PFS_global_param const*) (pfs_instr.cc:435)
+| | ->02.64% (2,949,120B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->02.64% (2,949,120B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.64% (2,949,120B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.29% (2,560,000B) 0xB11B05: init_digest(PFS_global_param const*) (pfs_digest.cc:73)
+| | ->02.29% (2,560,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->02.29% (2,560,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.29% (2,560,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.83% (2,048,000B) 0xB1407D: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:63)
+| | ->01.83% (2,048,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+| |   ->01.83% (2,048,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.83% (2,048,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.61% (1,800,128B) 0xB1666D: init_instruments(PFS_global_param const*) (pfs_instr.cc:311)
+| | ->01.61% (1,800,128B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->01.61% (1,800,128B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.61% (1,800,128B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.29% (1,440,000B) 0xB1101F: PFS_connection_slice::alloc_stages_slice(unsigned int) (pfs_con_slice.cc:63)
+| | ->01.29% (1,440,000B) in 3 places, all below massif's threshold (01.00%)
+| |   
+| ->01.24% (1,382,400B) 0xB1685D: init_instruments(PFS_global_param const*) (pfs_instr.cc:377)
+|   ->01.24% (1,382,400B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+|     ->01.24% (1,382,400B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+|       ->01.24% (1,382,400B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+|         
+->12.61% (14,107,887B) 0x9E1AF6: ut_malloc_low(unsigned long, unsigned long) (ut0mem.cc:104)
+| ->05.32% (5,950,184B) 0xA84A64: hash0_create(unsigned long) (hash0hash.cc:306)
+| | ->02.10% (2,352,480B) 0xA82EF4: ha_create_func(unsigned long, unsigned long, unsigned long) (ha0ha.cc:67)
+| | | ->01.98% (2,213,368B) 0xA0E88B: btr_search_sys_create(unsigned long) (btr0sea.cc:202)
+| | | | ->01.98% (2,213,368B) 0xA18EBE: buf_pool_init(unsigned long, unsigned long) (buf0buf.cc:1543)
+| | | |   ->01.98% (2,213,368B) 0x9BB3AE: innobase_start_or_create_for_mysql() (srv0start.cc:2032)
+| | | |     ->01.98% (2,213,368B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| | | |       ->01.98% (2,213,368B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| | | |         ->01.98% (2,213,368B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| | | |           ->01.98% (2,213,368B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| | | |             ->01.98% (2,213,368B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| | | |               ->01.98% (2,213,368B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| | | |                 ->01.98% (2,213,368B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | | |                   
+| | | ->00.12% (139,112B) in 1+ places, all below ms_print's threshold (01.00%)
+| | | 
+| | ->01.98% (2,213,368B) 0x93C2D3: recv_sys_init(unsigned long) (log0recv.cc:415)
+| | | ->01.98% (2,213,368B) 0x9BB760: innobase_start_or_create_for_mysql() (srv0start.cc:2130)
+| | |   ->01.98% (2,213,368B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| | |     ->01.98% (2,213,368B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| | |       ->01.98% (2,213,368B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| | |         ->01.98% (2,213,368B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| | |           ->01.98% (2,213,368B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| | |             ->01.98% (2,213,368B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| | |               ->01.98% (2,213,368B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |                 
+| | ->01.24% (1,384,336B) in 6 places, all below massif's threshold (01.00%)
+| |   
+| ->02.83% (3,166,080B) 0x95005E: os_event_create() (os0sync.cc:370)
+| | ->02.83% (3,166,080B) in 29 places, all below massif's threshold (01.00%)
+| |   
+| ->01.89% (2,113,536B) 0xA23C49: buf_dblwr_init(unsigned char*) (buf0dblwr.cc:163)
+| | ->01.89% (2,113,536B) 0xA247EE: buf_dblwr_init_or_load_pages(int, char*, bool) (buf0dblwr.cc:393)
+| |   ->01.89% (2,113,536B) 0x9BC35F: innobase_start_or_create_for_mysql() (srv0start.cc:1054)
+| |     ->01.89% (2,113,536B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |       ->01.89% (2,113,536B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |         ->01.89% (2,113,536B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |           ->01.89% (2,113,536B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |             ->01.89% (2,113,536B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |               ->01.89% (2,113,536B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |                 ->01.89% (2,113,536B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                   
+| ->01.87% (2,097,152B) 0x93C2A3: recv_sys_init(unsigned long) (log0recv.cc:411)
+| | ->01.87% (2,097,152B) 0x9BB760: innobase_start_or_create_for_mysql() (srv0start.cc:2130)
+| |   ->01.87% (2,097,152B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->01.87% (2,097,152B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->01.87% (2,097,152B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->01.87% (2,097,152B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->01.87% (2,097,152B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->01.87% (2,097,152B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->01.87% (2,097,152B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->00.70% (780,935B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->09.60% (10,742,960B) 0x942529: mem_heap_create_block_func(mem_block_info_t*, unsigned long, unsigned long) (mem0mem.cc:336)
+| ->07.50% (8,389,224B) 0x92D54D: log_init() (mem0mem.ic:449)
+| | ->07.50% (8,389,224B) 0x9BB510: innobase_start_or_create_for_mysql() (srv0start.cc:2059)
+| |   ->07.50% (8,389,224B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->07.50% (8,389,224B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->07.50% (8,389,224B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->07.50% (8,389,224B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->07.50% (8,389,224B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->07.50% (8,389,224B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->07.50% (8,389,224B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->01.87% (2,097,768B) 0x92D89A: log_init() (mem0mem.ic:449)
+| | ->01.87% (2,097,768B) 0x9BB510: innobase_start_or_create_for_mysql() (srv0start.cc:2059)
+| |   ->01.87% (2,097,768B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->01.87% (2,097,768B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->01.87% (2,097,768B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->01.87% (2,097,768B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->01.87% (2,097,768B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->01.87% (2,097,768B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->01.87% (2,097,768B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->00.23% (255,968B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->08.81% (9,860,921B) 0x8CD2C3: my_malloc (my_malloc.c:38)
+| ->06.13% (6,858,752B) 0x8D8CA9: my_large_malloc (my_largepage.c:64)
+| | ->06.13% (6,858,752B) 0x8BD8D1: init_key_cache (mf_keycache.c:431)
+| |   ->06.13% (6,858,752B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |     ->06.13% (6,858,752B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |       ->06.13% (6,858,752B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |         ->06.13% (6,858,752B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |           ->06.13% (6,858,752B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |             
+| ->01.37% (1,529,632B) 0x8BD8E7: init_key_cache (mf_keycache.c:438)
+| | ->01.37% (1,529,632B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |   ->01.37% (1,529,632B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |     ->01.37% (1,529,632B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |       ->01.37% (1,529,632B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |         ->01.37% (1,529,632B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |           
+| ->01.32% (1,472,537B) in 32 places, all below massif's threshold (01.00%)
+|   
+->00.13% (144,952B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 27     49,981,926      112,457,400      112,244,566       212,834            0
+ 28     51,230,608      112,475,184      112,262,045       213,139            0
+ 29     52,674,739      112,480,264      112,266,901       213,363            0
+99.81% (112,266,901B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->68.30% (76,824,776B) 0xB15288: pfs_malloc(unsigned long, int) (pfs_global.cc:57)
+| ->13.50% (15,190,272B) 0xB1B391: init_table_share(unsigned int) (pfs_instr_class.cc:344)
+| | ->13.50% (15,190,272B) 0xB1E992: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:88)
+| |   ->13.50% (15,190,272B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->13.50% (15,190,272B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->08.78% (9,880,800B) 0xB110BF: PFS_connection_slice::alloc_statements_slice(unsigned int) (pfs_con_slice.cc:83)
+| | ->02.93% (3,293,600B) 0xB15645: init_host(PFS_global_param const*) (pfs_host.cc:94)
+| | | ->02.93% (3,293,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->02.93% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->02.93% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->02.93% (3,293,600B) 0xB20BB5: init_user(PFS_global_param const*) (pfs_user.cc:94)
+| | | ->02.93% (3,293,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->02.93% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->02.93% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->02.93% (3,293,600B) 0xB103F5: init_account(PFS_global_param const*) (pfs_account.cc:97)
+| |   ->02.93% (3,293,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->02.93% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->02.93% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->08.43% (9,485,568B) 0xB1692C: init_instruments(PFS_global_param const*) (pfs_instr.cc:407)
+| | ->08.43% (9,485,568B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->08.43% (9,485,568B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->08.43% (9,485,568B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.47% (6,147,240B) in 29 places, all below massif's threshold (01.00%)
+| | 
+| ->05.24% (5,898,240B) 0xB168D0: init_instruments(PFS_global_param const*) (pfs_instr.cc:389)
+| | ->05.24% (5,898,240B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->05.24% (5,898,240B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.24% (5,898,240B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.08% (5,716,480B) 0xB16A9D: init_instruments(PFS_global_param const*) (pfs_instr.cc:325)
+| | ->05.08% (5,716,480B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->05.08% (5,716,480B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.08% (5,716,480B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->04.55% (5,120,000B) 0xB11B6C: init_digest(PFS_global_param const*) (pfs_digest.cc:90)
+| | ->04.55% (5,120,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->04.55% (5,120,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->04.55% (5,120,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->03.27% (3,676,800B) 0xB10F7F: PFS_connection_slice::alloc_waits_slice(unsigned int) (pfs_con_slice.cc:43)
+| | ->01.09% (1,225,600B) 0xB1568D: init_host(PFS_global_param const*) (pfs_host.cc:78)
+| | | ->01.09% (1,225,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->01.09% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.09% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.09% (1,225,600B) 0xB20BFD: init_user(PFS_global_param const*) (pfs_user.cc:78)
+| | | ->01.09% (1,225,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->01.09% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.09% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.09% (1,225,600B) 0xB1043D: init_account(PFS_global_param const*) (pfs_account.cc:81)
+| |   ->01.09% (1,225,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->01.09% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->01.09% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->03.14% (3,529,728B) 0xB167BB: init_instruments(PFS_global_param const*) (pfs_instr.cc:356)
+| | ->03.14% (3,529,728B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->03.14% (3,529,728B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->03.14% (3,529,728B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.62% (2,949,120B) 0xB16713: init_instruments(PFS_global_param const*) (pfs_instr.cc:435)
+| | ->02.62% (2,949,120B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->02.62% (2,949,120B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.62% (2,949,120B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.28% (2,560,000B) 0xB11B05: init_digest(PFS_global_param const*) (pfs_digest.cc:73)
+| | ->02.28% (2,560,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->02.28% (2,560,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.28% (2,560,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.82% (2,048,000B) 0xB1407D: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:63)
+| | ->01.82% (2,048,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+| |   ->01.82% (2,048,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.82% (2,048,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.60% (1,800,128B) 0xB1666D: init_instruments(PFS_global_param const*) (pfs_instr.cc:311)
+| | ->01.60% (1,800,128B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->01.60% (1,800,128B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.60% (1,800,128B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.28% (1,440,000B) 0xB1101F: PFS_connection_slice::alloc_stages_slice(unsigned int) (pfs_con_slice.cc:63)
+| | ->01.28% (1,440,000B) in 3 places, all below massif's threshold (01.00%)
+| |   
+| ->01.23% (1,382,400B) 0xB1685D: init_instruments(PFS_global_param const*) (pfs_instr.cc:377)
+|   ->01.23% (1,382,400B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+|     ->01.23% (1,382,400B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+|       ->01.23% (1,382,400B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+|         
+->13.02% (14,648,604B) 0x9E1AF6: ut_malloc_low(unsigned long, unsigned long) (ut0mem.cc:104)
+| ->05.78% (6,504,952B) 0xA84A64: hash0_create(unsigned long) (hash0hash.cc:306)
+| | ->02.09% (2,352,480B) 0xA82EF4: ha_create_func(unsigned long, unsigned long, unsigned long) (ha0ha.cc:67)
+| | | ->01.97% (2,213,368B) 0xA0E88B: btr_search_sys_create(unsigned long) (btr0sea.cc:202)
+| | | | ->01.97% (2,213,368B) 0xA18EBE: buf_pool_init(unsigned long, unsigned long) (buf0buf.cc:1543)
+| | | |   ->01.97% (2,213,368B) 0x9BB3AE: innobase_start_or_create_for_mysql() (srv0start.cc:2032)
+| | | |     ->01.97% (2,213,368B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| | | |       ->01.97% (2,213,368B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| | | |         ->01.97% (2,213,368B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| | | |           ->01.97% (2,213,368B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| | | |             ->01.97% (2,213,368B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| | | |               ->01.97% (2,213,368B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| | | |                 ->01.97% (2,213,368B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | | |                   
+| | | ->00.12% (139,112B) in 1+ places, all below ms_print's threshold (01.00%)
+| | | 
+| | ->01.97% (2,213,368B) 0x93C2D3: recv_sys_init(unsigned long) (log0recv.cc:415)
+| | | ->01.97% (2,213,368B) 0x9BB760: innobase_start_or_create_for_mysql() (srv0start.cc:2130)
+| | |   ->01.97% (2,213,368B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| | |     ->01.97% (2,213,368B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| | |       ->01.97% (2,213,368B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| | |         ->01.97% (2,213,368B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| | |           ->01.97% (2,213,368B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| | |             ->01.97% (2,213,368B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| | |               ->01.97% (2,213,368B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |                 
+| | ->01.72% (1,939,104B) in 8 places, all below massif's threshold (01.00%)
+| |   
+| ->02.82% (3,174,656B) 0x95005E: os_event_create() (os0sync.cc:370)
+| | ->02.82% (3,174,656B) in 31 places, all below massif's threshold (01.00%)
+| |   
+| ->01.88% (2,113,536B) 0xA23C49: buf_dblwr_init(unsigned char*) (buf0dblwr.cc:163)
+| | ->01.88% (2,113,536B) 0xA247EE: buf_dblwr_init_or_load_pages(int, char*, bool) (buf0dblwr.cc:393)
+| |   ->01.88% (2,113,536B) 0x9BC35F: innobase_start_or_create_for_mysql() (srv0start.cc:1054)
+| |     ->01.88% (2,113,536B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |       ->01.88% (2,113,536B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |         ->01.88% (2,113,536B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |           ->01.88% (2,113,536B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |             ->01.88% (2,113,536B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |               ->01.88% (2,113,536B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |                 ->01.88% (2,113,536B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                   
+| ->01.86% (2,097,152B) 0x93C2A3: recv_sys_init(unsigned long) (log0recv.cc:411)
+| | ->01.86% (2,097,152B) 0x9BB760: innobase_start_or_create_for_mysql() (srv0start.cc:2130)
+| |   ->01.86% (2,097,152B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->01.86% (2,097,152B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->01.86% (2,097,152B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->01.86% (2,097,152B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->01.86% (2,097,152B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->01.86% (2,097,152B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->01.86% (2,097,152B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->00.67% (758,308B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->09.57% (10,769,624B) 0x942529: mem_heap_create_block_func(mem_block_info_t*, unsigned long, unsigned long) (mem0mem.cc:336)
+| ->07.46% (8,389,224B) 0x92D54D: log_init() (mem0mem.ic:449)
+| | ->07.46% (8,389,224B) 0x9BB510: innobase_start_or_create_for_mysql() (srv0start.cc:2059)
+| |   ->07.46% (8,389,224B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->07.46% (8,389,224B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->07.46% (8,389,224B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->07.46% (8,389,224B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->07.46% (8,389,224B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->07.46% (8,389,224B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->07.46% (8,389,224B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->01.87% (2,097,768B) 0x92D89A: log_init() (mem0mem.ic:449)
+| | ->01.87% (2,097,768B) 0x9BB510: innobase_start_or_create_for_mysql() (srv0start.cc:2059)
+| |   ->01.87% (2,097,768B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->01.87% (2,097,768B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->01.87% (2,097,768B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->01.87% (2,097,768B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->01.87% (2,097,768B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->01.87% (2,097,768B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->01.87% (2,097,768B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->00.25% (282,632B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->08.77% (9,861,353B) 0x8CD2C3: my_malloc (my_malloc.c:38)
+| ->06.10% (6,858,752B) 0x8D8CA9: my_large_malloc (my_largepage.c:64)
+| | ->06.10% (6,858,752B) 0x8BD8D1: init_key_cache (mf_keycache.c:431)
+| |   ->06.10% (6,858,752B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |     ->06.10% (6,858,752B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |       ->06.10% (6,858,752B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |         ->06.10% (6,858,752B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |           ->06.10% (6,858,752B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |             
+| ->01.36% (1,529,632B) 0x8BD8E7: init_key_cache (mf_keycache.c:438)
+| | ->01.36% (1,529,632B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |   ->01.36% (1,529,632B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |     ->01.36% (1,529,632B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |       ->01.36% (1,529,632B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |         ->01.36% (1,529,632B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |           
+| ->01.31% (1,472,969B) in 32 places, all below massif's threshold (01.00%)
+|   
+->00.14% (162,544B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 30     54,075,531      112,485,576      112,271,957       213,619            0
+ 31     55,651,586      112,491,552      112,277,645       213,907            0
+ 32     56,877,658      112,496,880      112,282,741       214,139            0
+ 33     58,278,770      112,502,192      112,287,797       214,395            0
+ 34     59,679,882      112,507,504      112,292,853       214,651            0
+ 35     61,080,994      112,512,816      112,297,909       214,907            0
+ 36     62,482,275      112,519,592      112,304,413       215,179            0
+ 37     63,883,387      112,524,904      112,309,469       215,435            0
+ 38     65,459,638      112,530,880      112,315,157       215,723            0
+ 39     66,860,750      112,536,192      112,320,213       215,979            0
+ 40     68,086,762      112,540,840      112,324,637       216,203            0
+99.81% (112,324,637B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->68.26% (76,824,776B) 0xB15288: pfs_malloc(unsigned long, int) (pfs_global.cc:57)
+| ->13.50% (15,190,272B) 0xB1B391: init_table_share(unsigned int) (pfs_instr_class.cc:344)
+| | ->13.50% (15,190,272B) 0xB1E992: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:88)
+| |   ->13.50% (15,190,272B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->13.50% (15,190,272B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->08.78% (9,880,800B) 0xB110BF: PFS_connection_slice::alloc_statements_slice(unsigned int) (pfs_con_slice.cc:83)
+| | ->02.93% (3,293,600B) 0xB15645: init_host(PFS_global_param const*) (pfs_host.cc:94)
+| | | ->02.93% (3,293,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->02.93% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->02.93% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->02.93% (3,293,600B) 0xB20BB5: init_user(PFS_global_param const*) (pfs_user.cc:94)
+| | | ->02.93% (3,293,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->02.93% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->02.93% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->02.93% (3,293,600B) 0xB103F5: init_account(PFS_global_param const*) (pfs_account.cc:97)
+| |   ->02.93% (3,293,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->02.93% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->02.93% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->08.43% (9,485,568B) 0xB1692C: init_instruments(PFS_global_param const*) (pfs_instr.cc:407)
+| | ->08.43% (9,485,568B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->08.43% (9,485,568B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->08.43% (9,485,568B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.46% (6,147,240B) in 29 places, all below massif's threshold (01.00%)
+| | 
+| ->05.24% (5,898,240B) 0xB168D0: init_instruments(PFS_global_param const*) (pfs_instr.cc:389)
+| | ->05.24% (5,898,240B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->05.24% (5,898,240B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.24% (5,898,240B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.08% (5,716,480B) 0xB16A9D: init_instruments(PFS_global_param const*) (pfs_instr.cc:325)
+| | ->05.08% (5,716,480B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->05.08% (5,716,480B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.08% (5,716,480B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->04.55% (5,120,000B) 0xB11B6C: init_digest(PFS_global_param const*) (pfs_digest.cc:90)
+| | ->04.55% (5,120,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->04.55% (5,120,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->04.55% (5,120,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->03.27% (3,676,800B) 0xB10F7F: PFS_connection_slice::alloc_waits_slice(unsigned int) (pfs_con_slice.cc:43)
+| | ->01.09% (1,225,600B) 0xB1568D: init_host(PFS_global_param const*) (pfs_host.cc:78)
+| | | ->01.09% (1,225,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->01.09% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.09% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.09% (1,225,600B) 0xB20BFD: init_user(PFS_global_param const*) (pfs_user.cc:78)
+| | | ->01.09% (1,225,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->01.09% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.09% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.09% (1,225,600B) 0xB1043D: init_account(PFS_global_param const*) (pfs_account.cc:81)
+| |   ->01.09% (1,225,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->01.09% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->01.09% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->03.14% (3,529,728B) 0xB167BB: init_instruments(PFS_global_param const*) (pfs_instr.cc:356)
+| | ->03.14% (3,529,728B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->03.14% (3,529,728B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->03.14% (3,529,728B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.62% (2,949,120B) 0xB16713: init_instruments(PFS_global_param const*) (pfs_instr.cc:435)
+| | ->02.62% (2,949,120B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->02.62% (2,949,120B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.62% (2,949,120B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.27% (2,560,000B) 0xB11B05: init_digest(PFS_global_param const*) (pfs_digest.cc:73)
+| | ->02.27% (2,560,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->02.27% (2,560,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.27% (2,560,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.82% (2,048,000B) 0xB1407D: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:63)
+| | ->01.82% (2,048,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+| |   ->01.82% (2,048,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.82% (2,048,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.60% (1,800,128B) 0xB1666D: init_instruments(PFS_global_param const*) (pfs_instr.cc:311)
+| | ->01.60% (1,800,128B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->01.60% (1,800,128B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.60% (1,800,128B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.28% (1,440,000B) 0xB1101F: PFS_connection_slice::alloc_stages_slice(unsigned int) (pfs_con_slice.cc:63)
+| | ->01.28% (1,440,000B) in 3 places, all below massif's threshold (01.00%)
+| |   
+| ->01.23% (1,382,400B) 0xB1685D: init_instruments(PFS_global_param const*) (pfs_instr.cc:377)
+|   ->01.23% (1,382,400B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+|     ->01.23% (1,382,400B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+|       ->01.23% (1,382,400B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+|         
+->13.04% (14,671,132B) 0x9E1AF6: ut_malloc_low(unsigned long, unsigned long) (ut0mem.cc:104)
+| ->05.78% (6,504,952B) 0xA84A64: hash0_create(unsigned long) (hash0hash.cc:306)
+| | ->02.09% (2,352,480B) 0xA82EF4: ha_create_func(unsigned long, unsigned long, unsigned long) (ha0ha.cc:67)
+| | | ->01.97% (2,213,368B) 0xA0E88B: btr_search_sys_create(unsigned long) (btr0sea.cc:202)
+| | | | ->01.97% (2,213,368B) 0xA18EBE: buf_pool_init(unsigned long, unsigned long) (buf0buf.cc:1543)
+| | | |   ->01.97% (2,213,368B) 0x9BB3AE: innobase_start_or_create_for_mysql() (srv0start.cc:2032)
+| | | |     ->01.97% (2,213,368B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| | | |       ->01.97% (2,213,368B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| | | |         ->01.97% (2,213,368B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| | | |           ->01.97% (2,213,368B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| | | |             ->01.97% (2,213,368B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| | | |               ->01.97% (2,213,368B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| | | |                 ->01.97% (2,213,368B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | | |                   
+| | | ->00.12% (139,112B) in 1+ places, all below ms_print's threshold (01.00%)
+| | | 
+| | ->01.97% (2,213,368B) 0x93C2D3: recv_sys_init(unsigned long) (log0recv.cc:415)
+| | | ->01.97% (2,213,368B) 0x9BB760: innobase_start_or_create_for_mysql() (srv0start.cc:2130)
+| | |   ->01.97% (2,213,368B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| | |     ->01.97% (2,213,368B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| | |       ->01.97% (2,213,368B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| | |         ->01.97% (2,213,368B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| | |           ->01.97% (2,213,368B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| | |             ->01.97% (2,213,368B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| | |               ->01.97% (2,213,368B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |                 
+| | ->01.72% (1,939,104B) in 8 places, all below massif's threshold (01.00%)
+| |   
+| ->02.84% (3,197,184B) 0x95005E: os_event_create() (os0sync.cc:370)
+| | ->02.84% (3,197,184B) in 31 places, all below massif's threshold (01.00%)
+| |   
+| ->01.88% (2,113,536B) 0xA23C49: buf_dblwr_init(unsigned char*) (buf0dblwr.cc:163)
+| | ->01.88% (2,113,536B) 0xA247EE: buf_dblwr_init_or_load_pages(int, char*, bool) (buf0dblwr.cc:393)
+| |   ->01.88% (2,113,536B) 0x9BC35F: innobase_start_or_create_for_mysql() (srv0start.cc:1054)
+| |     ->01.88% (2,113,536B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |       ->01.88% (2,113,536B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |         ->01.88% (2,113,536B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |           ->01.88% (2,113,536B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |             ->01.88% (2,113,536B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |               ->01.88% (2,113,536B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |                 ->01.88% (2,113,536B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                   
+| ->01.86% (2,097,152B) 0x93C2A3: recv_sys_init(unsigned long) (log0recv.cc:411)
+| | ->01.86% (2,097,152B) 0x9BB760: innobase_start_or_create_for_mysql() (srv0start.cc:2130)
+| |   ->01.86% (2,097,152B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->01.86% (2,097,152B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->01.86% (2,097,152B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->01.86% (2,097,152B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->01.86% (2,097,152B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->01.86% (2,097,152B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->01.86% (2,097,152B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->00.67% (758,308B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->09.60% (10,803,384B) 0x942529: mem_heap_create_block_func(mem_block_info_t*, unsigned long, unsigned long) (mem0mem.cc:336)
+| ->07.45% (8,389,224B) 0x92D54D: log_init() (mem0mem.ic:449)
+| | ->07.45% (8,389,224B) 0x9BB510: innobase_start_or_create_for_mysql() (srv0start.cc:2059)
+| |   ->07.45% (8,389,224B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->07.45% (8,389,224B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->07.45% (8,389,224B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->07.45% (8,389,224B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->07.45% (8,389,224B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->07.45% (8,389,224B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->07.45% (8,389,224B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->01.86% (2,097,768B) 0x92D89A: log_init() (mem0mem.ic:449)
+| | ->01.86% (2,097,768B) 0x9BB510: innobase_start_or_create_for_mysql() (srv0start.cc:2059)
+| |   ->01.86% (2,097,768B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->01.86% (2,097,768B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->01.86% (2,097,768B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->01.86% (2,097,768B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->01.86% (2,097,768B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->01.86% (2,097,768B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->01.86% (2,097,768B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->00.28% (316,392B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->08.76% (9,861,353B) 0x8CD2C3: my_malloc (my_malloc.c:38)
+| ->06.09% (6,858,752B) 0x8D8CA9: my_large_malloc (my_largepage.c:64)
+| | ->06.09% (6,858,752B) 0x8BD8D1: init_key_cache (mf_keycache.c:431)
+| |   ->06.09% (6,858,752B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |     ->06.09% (6,858,752B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |       ->06.09% (6,858,752B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |         ->06.09% (6,858,752B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |           ->06.09% (6,858,752B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |             
+| ->01.36% (1,529,632B) 0x8BD8E7: init_key_cache (mf_keycache.c:438)
+| | ->01.36% (1,529,632B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |   ->01.36% (1,529,632B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |     ->01.36% (1,529,632B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |       ->01.36% (1,529,632B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |         ->01.36% (1,529,632B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |           
+| ->01.31% (1,472,969B) in 32 places, all below massif's threshold (01.00%)
+|   
+->00.15% (163,992B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 41     69,487,874      112,546,152      112,329,693       216,459            0
+ 42     70,888,986      112,551,464      112,334,749       216,715            0
+ 43     72,290,098      112,556,776      112,339,805       216,971            0
+ 44     73,702,494      112,564,160      112,346,869       217,291            0
+ 45     77,579,757      110,357,448      110,139,997       217,451            0
+ 46     79,394,962      128,205,832      127,982,379       223,453            0
+99.83% (127,982,379B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->59.92% (76,824,776B) 0xB15288: pfs_malloc(unsigned long, int) (pfs_global.cc:57)
+| ->11.85% (15,190,272B) 0xB1B391: init_table_share(unsigned int) (pfs_instr_class.cc:344)
+| | ->11.85% (15,190,272B) 0xB1E992: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:88)
+| |   ->11.85% (15,190,272B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->11.85% (15,190,272B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->07.71% (9,880,800B) 0xB110BF: PFS_connection_slice::alloc_statements_slice(unsigned int) (pfs_con_slice.cc:83)
+| | ->02.57% (3,293,600B) 0xB15645: init_host(PFS_global_param const*) (pfs_host.cc:94)
+| | | ->02.57% (3,293,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->02.57% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->02.57% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->02.57% (3,293,600B) 0xB20BB5: init_user(PFS_global_param const*) (pfs_user.cc:94)
+| | | ->02.57% (3,293,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->02.57% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->02.57% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->02.57% (3,293,600B) 0xB103F5: init_account(PFS_global_param const*) (pfs_account.cc:97)
+| |   ->02.57% (3,293,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->02.57% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->02.57% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->07.40% (9,485,568B) 0xB1692C: init_instruments(PFS_global_param const*) (pfs_instr.cc:407)
+| | ->07.40% (9,485,568B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->07.40% (9,485,568B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->07.40% (9,485,568B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->04.79% (6,147,240B) in 29 places, all below massif's threshold (01.00%)
+| | 
+| ->04.60% (5,898,240B) 0xB168D0: init_instruments(PFS_global_param const*) (pfs_instr.cc:389)
+| | ->04.60% (5,898,240B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->04.60% (5,898,240B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->04.60% (5,898,240B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->04.46% (5,716,480B) 0xB16A9D: init_instruments(PFS_global_param const*) (pfs_instr.cc:325)
+| | ->04.46% (5,716,480B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->04.46% (5,716,480B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->04.46% (5,716,480B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->03.99% (5,120,000B) 0xB11B6C: init_digest(PFS_global_param const*) (pfs_digest.cc:90)
+| | ->03.99% (5,120,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->03.99% (5,120,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->03.99% (5,120,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.87% (3,676,800B) 0xB10F7F: PFS_connection_slice::alloc_waits_slice(unsigned int) (pfs_con_slice.cc:43)
+| | ->02.87% (3,676,800B) in 3 places, all below massif's threshold (01.00%)
+| |   
+| ->02.75% (3,529,728B) 0xB167BB: init_instruments(PFS_global_param const*) (pfs_instr.cc:356)
+| | ->02.75% (3,529,728B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->02.75% (3,529,728B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.75% (3,529,728B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.30% (2,949,120B) 0xB16713: init_instruments(PFS_global_param const*) (pfs_instr.cc:435)
+| | ->02.30% (2,949,120B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->02.30% (2,949,120B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.30% (2,949,120B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.00% (2,560,000B) 0xB11B05: init_digest(PFS_global_param const*) (pfs_digest.cc:73)
+| | ->02.00% (2,560,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->02.00% (2,560,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.00% (2,560,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.60% (2,048,000B) 0xB1407D: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:63)
+| | ->01.60% (2,048,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+| |   ->01.60% (2,048,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.60% (2,048,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.40% (1,800,128B) 0xB1666D: init_instruments(PFS_global_param const*) (pfs_instr.cc:311)
+| | ->01.40% (1,800,128B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->01.40% (1,800,128B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.40% (1,800,128B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.12% (1,440,000B) 0xB1101F: PFS_connection_slice::alloc_stages_slice(unsigned int) (pfs_con_slice.cc:63)
+| | ->01.12% (1,440,000B) in 3 places, all below massif's threshold (01.00%)
+| |   
+| ->01.08% (1,382,400B) 0xB1685D: init_instruments(PFS_global_param const*) (pfs_instr.cc:377)
+|   ->01.08% (1,382,400B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+|     ->01.08% (1,382,400B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+|       ->01.08% (1,382,400B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+|         
+->23.20% (29,748,161B) 0x8CD2C3: my_malloc (my_malloc.c:38)
+| ->15.54% (19,922,944B) 0x59A2B0: ha_recover(st_hash*) (handler.cc:1955)
+| | ->15.54% (19,922,944B) 0x591E92: init_server_components() (mysqld.cc:5324)
+| |   ->15.54% (19,922,944B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |     ->15.54% (19,922,944B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.35% (6,858,752B) 0x8D8CA9: my_large_malloc (my_largepage.c:64)
+| | ->05.35% (6,858,752B) 0x8BD8D1: init_key_cache (mf_keycache.c:431)
+| |   ->05.35% (6,858,752B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |     ->05.35% (6,858,752B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |       ->05.35% (6,858,752B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |         ->05.35% (6,858,752B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |           ->05.35% (6,858,752B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |             
+| ->01.19% (1,529,632B) 0x8BD8E7: init_key_cache (mf_keycache.c:438)
+| | ->01.19% (1,529,632B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |   ->01.19% (1,529,632B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |     ->01.19% (1,529,632B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |       ->01.19% (1,529,632B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |         ->01.19% (1,529,632B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |           
+| ->01.12% (1,436,833B) in 37 places, all below massif's threshold (01.00%)
+|   
+->08.45% (10,829,016B) 0x942529: mem_heap_create_block_func(mem_block_info_t*, unsigned long, unsigned long) (mem0mem.cc:336)
+| ->06.54% (8,389,224B) 0x92D54D: log_init() (mem0mem.ic:449)
+| | ->06.54% (8,389,224B) 0x9BB510: innobase_start_or_create_for_mysql() (srv0start.cc:2059)
+| |   ->06.54% (8,389,224B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->06.54% (8,389,224B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->06.54% (8,389,224B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->06.54% (8,389,224B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->06.54% (8,389,224B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->06.54% (8,389,224B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->06.54% (8,389,224B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->01.64% (2,097,768B) 0x92D89A: log_init() (mem0mem.ic:449)
+| | ->01.64% (2,097,768B) 0x9BB510: innobase_start_or_create_for_mysql() (srv0start.cc:2059)
+| |   ->01.64% (2,097,768B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->01.64% (2,097,768B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->01.64% (2,097,768B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->01.64% (2,097,768B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->01.64% (2,097,768B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->01.64% (2,097,768B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->01.64% (2,097,768B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->00.27% (342,024B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->08.11% (10,395,546B) 0x9E1AF6: ut_malloc_low(unsigned long, unsigned long) (ut0mem.cc:104)
+| ->03.35% (4,294,040B) 0xA84A64: hash0_create(unsigned long) (hash0hash.cc:306)
+| | ->01.83% (2,352,480B) 0xA82EF4: ha_create_func(unsigned long, unsigned long, unsigned long) (ha0ha.cc:67)
+| | | ->01.73% (2,213,368B) 0xA0E88B: btr_search_sys_create(unsigned long) (btr0sea.cc:202)
+| | | | ->01.73% (2,213,368B) 0xA18EBE: buf_pool_init(unsigned long, unsigned long) (buf0buf.cc:1543)
+| | | |   ->01.73% (2,213,368B) 0x9BB3AE: innobase_start_or_create_for_mysql() (srv0start.cc:2032)
+| | | |     ->01.73% (2,213,368B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| | | |       ->01.73% (2,213,368B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| | | |         ->01.73% (2,213,368B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| | | |           ->01.73% (2,213,368B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| | | |             ->01.73% (2,213,368B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| | | |               ->01.73% (2,213,368B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| | | |                 ->01.73% (2,213,368B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | | |                   
+| | | ->00.11% (139,112B) in 1+ places, all below ms_print's threshold (01.00%)
+| | | 
+| | ->01.51% (1,941,560B) in 11 places, all below massif's threshold (01.00%)
+| |   
+| ->02.51% (3,213,184B) 0x95005E: os_event_create() (os0sync.cc:370)
+| | ->02.51% (3,213,184B) in 33 places, all below massif's threshold (01.00%)
+| |   
+| ->01.65% (2,113,536B) 0xA23C49: buf_dblwr_init(unsigned char*) (buf0dblwr.cc:163)
+| | ->01.65% (2,113,536B) 0xA247EE: buf_dblwr_init_or_load_pages(int, char*, bool) (buf0dblwr.cc:393)
+| |   ->01.65% (2,113,536B) 0x9BC35F: innobase_start_or_create_for_mysql() (srv0start.cc:1054)
+| |     ->01.65% (2,113,536B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |       ->01.65% (2,113,536B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |         ->01.65% (2,113,536B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |           ->01.65% (2,113,536B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |             ->01.65% (2,113,536B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |               ->01.65% (2,113,536B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |                 ->01.65% (2,113,536B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                   
+| ->00.60% (774,786B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->00.14% (184,880B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 47     81,011,269      108,361,784      108,129,062       232,722            0
+ 48     82,522,423      108,379,192      108,140,326       238,866            0
+ 49     83,638,811      108,398,288      108,153,422       244,866            0
+ 50     84,690,378      108,408,968      108,159,830       249,138            0
+ 51     85,762,963      108,420,568      108,166,790       253,778            0
+ 52     86,833,723      108,432,288      108,173,822       258,466            0
+99.76% (108,173,822B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->70.85% (76,824,776B) 0xB15288: pfs_malloc(unsigned long, int) (pfs_global.cc:57)
+| ->14.01% (15,190,272B) 0xB1B391: init_table_share(unsigned int) (pfs_instr_class.cc:344)
+| | ->14.01% (15,190,272B) 0xB1E992: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:88)
+| |   ->14.01% (15,190,272B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->14.01% (15,190,272B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->09.11% (9,880,800B) 0xB110BF: PFS_connection_slice::alloc_statements_slice(unsigned int) (pfs_con_slice.cc:83)
+| | ->03.04% (3,293,600B) 0xB15645: init_host(PFS_global_param const*) (pfs_host.cc:94)
+| | | ->03.04% (3,293,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->03.04% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->03.04% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->03.04% (3,293,600B) 0xB20BB5: init_user(PFS_global_param const*) (pfs_user.cc:94)
+| | | ->03.04% (3,293,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->03.04% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->03.04% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->03.04% (3,293,600B) 0xB103F5: init_account(PFS_global_param const*) (pfs_account.cc:97)
+| |   ->03.04% (3,293,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->03.04% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->03.04% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->08.75% (9,485,568B) 0xB1692C: init_instruments(PFS_global_param const*) (pfs_instr.cc:407)
+| | ->08.75% (9,485,568B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->08.75% (9,485,568B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->08.75% (9,485,568B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.67% (6,147,240B) in 29 places, all below massif's threshold (01.00%)
+| | 
+| ->05.44% (5,898,240B) 0xB168D0: init_instruments(PFS_global_param const*) (pfs_instr.cc:389)
+| | ->05.44% (5,898,240B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->05.44% (5,898,240B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.44% (5,898,240B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.27% (5,716,480B) 0xB16A9D: init_instruments(PFS_global_param const*) (pfs_instr.cc:325)
+| | ->05.27% (5,716,480B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->05.27% (5,716,480B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.27% (5,716,480B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->04.72% (5,120,000B) 0xB11B6C: init_digest(PFS_global_param const*) (pfs_digest.cc:90)
+| | ->04.72% (5,120,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->04.72% (5,120,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->04.72% (5,120,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->03.39% (3,676,800B) 0xB10F7F: PFS_connection_slice::alloc_waits_slice(unsigned int) (pfs_con_slice.cc:43)
+| | ->01.13% (1,225,600B) 0xB1568D: init_host(PFS_global_param const*) (pfs_host.cc:78)
+| | | ->01.13% (1,225,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->01.13% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.13% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.13% (1,225,600B) 0xB20BFD: init_user(PFS_global_param const*) (pfs_user.cc:78)
+| | | ->01.13% (1,225,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->01.13% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.13% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.13% (1,225,600B) 0xB1043D: init_account(PFS_global_param const*) (pfs_account.cc:81)
+| |   ->01.13% (1,225,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->01.13% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->01.13% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->03.26% (3,529,728B) 0xB167BB: init_instruments(PFS_global_param const*) (pfs_instr.cc:356)
+| | ->03.26% (3,529,728B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->03.26% (3,529,728B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->03.26% (3,529,728B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.72% (2,949,120B) 0xB16713: init_instruments(PFS_global_param const*) (pfs_instr.cc:435)
+| | ->02.72% (2,949,120B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->02.72% (2,949,120B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.72% (2,949,120B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.36% (2,560,000B) 0xB11B05: init_digest(PFS_global_param const*) (pfs_digest.cc:73)
+| | ->02.36% (2,560,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->02.36% (2,560,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.36% (2,560,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.89% (2,048,000B) 0xB1407D: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:63)
+| | ->01.89% (2,048,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+| |   ->01.89% (2,048,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.89% (2,048,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.66% (1,800,128B) 0xB1666D: init_instruments(PFS_global_param const*) (pfs_instr.cc:311)
+| | ->01.66% (1,800,128B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->01.66% (1,800,128B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.66% (1,800,128B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.33% (1,440,000B) 0xB1101F: PFS_connection_slice::alloc_stages_slice(unsigned int) (pfs_con_slice.cc:63)
+| | ->01.33% (1,440,000B) in 3 places, all below massif's threshold (01.00%)
+| |   
+| ->01.27% (1,382,400B) 0xB1685D: init_instruments(PFS_global_param const*) (pfs_instr.cc:377)
+|   ->01.27% (1,382,400B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+|     ->01.27% (1,382,400B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+|       ->01.27% (1,382,400B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+|         
+->09.99% (10,829,016B) 0x942529: mem_heap_create_block_func(mem_block_info_t*, unsigned long, unsigned long) (mem0mem.cc:336)
+| ->07.74% (8,389,224B) 0x92D54D: log_init() (mem0mem.ic:449)
+| | ->07.74% (8,389,224B) 0x9BB510: innobase_start_or_create_for_mysql() (srv0start.cc:2059)
+| |   ->07.74% (8,389,224B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->07.74% (8,389,224B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->07.74% (8,389,224B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->07.74% (8,389,224B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->07.74% (8,389,224B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->07.74% (8,389,224B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->07.74% (8,389,224B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->01.93% (2,097,768B) 0x92D89A: log_init() (mem0mem.ic:449)
+| | ->01.93% (2,097,768B) 0x9BB510: innobase_start_or_create_for_mysql() (srv0start.cc:2059)
+| |   ->01.93% (2,097,768B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->01.93% (2,097,768B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->01.93% (2,097,768B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->01.93% (2,097,768B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->01.93% (2,097,768B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->01.93% (2,097,768B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->01.93% (2,097,768B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->00.32% (342,024B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->09.59% (10,395,546B) 0x9E1AF6: ut_malloc_low(unsigned long, unsigned long) (ut0mem.cc:104)
+| ->03.96% (4,294,040B) 0xA84A64: hash0_create(unsigned long) (hash0hash.cc:306)
+| | ->02.17% (2,352,480B) 0xA82EF4: ha_create_func(unsigned long, unsigned long, unsigned long) (ha0ha.cc:67)
+| | | ->02.04% (2,213,368B) 0xA0E88B: btr_search_sys_create(unsigned long) (btr0sea.cc:202)
+| | | | ->02.04% (2,213,368B) 0xA18EBE: buf_pool_init(unsigned long, unsigned long) (buf0buf.cc:1543)
+| | | |   ->02.04% (2,213,368B) 0x9BB3AE: innobase_start_or_create_for_mysql() (srv0start.cc:2032)
+| | | |     ->02.04% (2,213,368B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| | | |       ->02.04% (2,213,368B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| | | |         ->02.04% (2,213,368B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| | | |           ->02.04% (2,213,368B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| | | |             ->02.04% (2,213,368B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| | | |               ->02.04% (2,213,368B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| | | |                 ->02.04% (2,213,368B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | | |                   
+| | | ->00.13% (139,112B) in 1+ places, all below ms_print's threshold (01.00%)
+| | | 
+| | ->01.79% (1,941,560B) in 11 places, all below massif's threshold (01.00%)
+| |   
+| ->02.96% (3,213,184B) 0x95005E: os_event_create() (os0sync.cc:370)
+| | ->02.96% (3,213,184B) in 33 places, all below massif's threshold (01.00%)
+| |   
+| ->01.95% (2,113,536B) 0xA23C49: buf_dblwr_init(unsigned char*) (buf0dblwr.cc:163)
+| | ->01.95% (2,113,536B) 0xA247EE: buf_dblwr_init_or_load_pages(int, char*, bool) (buf0dblwr.cc:393)
+| |   ->01.95% (2,113,536B) 0x9BC35F: innobase_start_or_create_for_mysql() (srv0start.cc:1054)
+| |     ->01.95% (2,113,536B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |       ->01.95% (2,113,536B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |         ->01.95% (2,113,536B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |           ->01.95% (2,113,536B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |             ->01.95% (2,113,536B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |               ->01.95% (2,113,536B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |                 ->01.95% (2,113,536B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                   
+| ->00.71% (774,786B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->09.10% (9,870,324B) 0x8CD2C3: my_malloc (my_malloc.c:38)
+| ->06.33% (6,858,752B) 0x8D8CA9: my_large_malloc (my_largepage.c:64)
+| | ->06.33% (6,858,752B) 0x8BD8D1: init_key_cache (mf_keycache.c:431)
+| |   ->06.33% (6,858,752B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |     ->06.33% (6,858,752B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |       ->06.33% (6,858,752B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |         ->06.33% (6,858,752B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |           ->06.33% (6,858,752B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |             
+| ->01.41% (1,529,632B) 0x8BD8E7: init_key_cache (mf_keycache.c:438)
+| | ->01.41% (1,529,632B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |   ->01.41% (1,529,632B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |     ->01.41% (1,529,632B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |       ->01.41% (1,529,632B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |         ->01.41% (1,529,632B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |           
+| ->01.37% (1,481,940B) in 46 places, all below massif's threshold (01.00%)
+|   
+->00.23% (254,160B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 53     87,884,806      108,468,960      108,199,102       269,858            0
+ 54     88,937,921      108,613,024      108,323,901       289,123            0
+ 55     90,026,100      108,877,560      108,585,240       292,320            0
+ 56     91,095,725      108,877,376      108,584,532       292,844            0
+ 57     92,147,429      109,017,824      108,723,055       294,769            0
+ 58     93,201,293      109,230,824      108,931,862       298,962            0
+ 59     94,255,035      109,348,600      109,048,065       300,535            0
+ 60     95,346,802      109,508,368      109,205,131       303,237            0
+ 61     96,398,880      109,712,184      109,405,732       306,452            0
+ 62     98,693,971      109,750,776      109,445,270       305,506            0
+99.72% (109,445,270B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->70.00% (76,824,776B) 0xB15288: pfs_malloc(unsigned long, int) (pfs_global.cc:57)
+| ->13.84% (15,190,272B) 0xB1B391: init_table_share(unsigned int) (pfs_instr_class.cc:344)
+| | ->13.84% (15,190,272B) 0xB1E992: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:88)
+| |   ->13.84% (15,190,272B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->13.84% (15,190,272B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->09.00% (9,880,800B) 0xB110BF: PFS_connection_slice::alloc_statements_slice(unsigned int) (pfs_con_slice.cc:83)
+| | ->03.00% (3,293,600B) 0xB15645: init_host(PFS_global_param const*) (pfs_host.cc:94)
+| | | ->03.00% (3,293,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->03.00% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->03.00% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->03.00% (3,293,600B) 0xB20BB5: init_user(PFS_global_param const*) (pfs_user.cc:94)
+| | | ->03.00% (3,293,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->03.00% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->03.00% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->03.00% (3,293,600B) 0xB103F5: init_account(PFS_global_param const*) (pfs_account.cc:97)
+| |   ->03.00% (3,293,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->03.00% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->03.00% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->08.64% (9,485,568B) 0xB1692C: init_instruments(PFS_global_param const*) (pfs_instr.cc:407)
+| | ->08.64% (9,485,568B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->08.64% (9,485,568B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->08.64% (9,485,568B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.60% (6,147,240B) in 29 places, all below massif's threshold (01.00%)
+| | 
+| ->05.37% (5,898,240B) 0xB168D0: init_instruments(PFS_global_param const*) (pfs_instr.cc:389)
+| | ->05.37% (5,898,240B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->05.37% (5,898,240B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.37% (5,898,240B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.21% (5,716,480B) 0xB16A9D: init_instruments(PFS_global_param const*) (pfs_instr.cc:325)
+| | ->05.21% (5,716,480B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->05.21% (5,716,480B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.21% (5,716,480B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->04.67% (5,120,000B) 0xB11B6C: init_digest(PFS_global_param const*) (pfs_digest.cc:90)
+| | ->04.67% (5,120,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->04.67% (5,120,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->04.67% (5,120,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->03.35% (3,676,800B) 0xB10F7F: PFS_connection_slice::alloc_waits_slice(unsigned int) (pfs_con_slice.cc:43)
+| | ->01.12% (1,225,600B) 0xB1568D: init_host(PFS_global_param const*) (pfs_host.cc:78)
+| | | ->01.12% (1,225,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->01.12% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.12% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.12% (1,225,600B) 0xB20BFD: init_user(PFS_global_param const*) (pfs_user.cc:78)
+| | | ->01.12% (1,225,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->01.12% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.12% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.12% (1,225,600B) 0xB1043D: init_account(PFS_global_param const*) (pfs_account.cc:81)
+| |   ->01.12% (1,225,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->01.12% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->01.12% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->03.22% (3,529,728B) 0xB167BB: init_instruments(PFS_global_param const*) (pfs_instr.cc:356)
+| | ->03.22% (3,529,728B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->03.22% (3,529,728B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->03.22% (3,529,728B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.69% (2,949,120B) 0xB16713: init_instruments(PFS_global_param const*) (pfs_instr.cc:435)
+| | ->02.69% (2,949,120B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->02.69% (2,949,120B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.69% (2,949,120B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.33% (2,560,000B) 0xB11B05: init_digest(PFS_global_param const*) (pfs_digest.cc:73)
+| | ->02.33% (2,560,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->02.33% (2,560,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.33% (2,560,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.87% (2,048,000B) 0xB1407D: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:63)
+| | ->01.87% (2,048,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+| |   ->01.87% (2,048,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.87% (2,048,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.64% (1,800,128B) 0xB1666D: init_instruments(PFS_global_param const*) (pfs_instr.cc:311)
+| | ->01.64% (1,800,128B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->01.64% (1,800,128B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.64% (1,800,128B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.31% (1,440,000B) 0xB1101F: PFS_connection_slice::alloc_stages_slice(unsigned int) (pfs_con_slice.cc:63)
+| | ->01.31% (1,440,000B) in 3 places, all below massif's threshold (01.00%)
+| |   
+| ->01.26% (1,382,400B) 0xB1685D: init_instruments(PFS_global_param const*) (pfs_instr.cc:377)
+|   ->01.26% (1,382,400B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+|     ->01.26% (1,382,400B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+|       ->01.26% (1,382,400B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+|         
+->10.04% (11,019,552B) 0x8CD2C3: my_malloc (my_malloc.c:38)
+| ->06.25% (6,858,752B) 0x8D8CA9: my_large_malloc (my_largepage.c:64)
+| | ->06.25% (6,858,752B) 0x8BD8D1: init_key_cache (mf_keycache.c:431)
+| |   ->06.25% (6,858,752B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |     ->06.25% (6,858,752B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |       ->06.25% (6,858,752B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |         ->06.25% (6,858,752B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |           ->06.25% (6,858,752B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |             
+| ->02.40% (2,631,168B) in 55 places, all below massif's threshold (01.00%)
+| | 
+| ->01.39% (1,529,632B) 0x8BD8E7: init_key_cache (mf_keycache.c:438)
+|   ->01.39% (1,529,632B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+|     ->01.39% (1,529,632B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+|       ->01.39% (1,529,632B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+|         ->01.39% (1,529,632B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+|           ->01.39% (1,529,632B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+|             
+->09.89% (10,850,944B) 0x942529: mem_heap_create_block_func(mem_block_info_t*, unsigned long, unsigned long) (mem0mem.cc:336)
+| ->07.64% (8,389,224B) 0x92D54D: log_init() (mem0mem.ic:449)
+| | ->07.64% (8,389,224B) 0x9BB510: innobase_start_or_create_for_mysql() (srv0start.cc:2059)
+| |   ->07.64% (8,389,224B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->07.64% (8,389,224B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->07.64% (8,389,224B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->07.64% (8,389,224B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->07.64% (8,389,224B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->07.64% (8,389,224B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->07.64% (8,389,224B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->01.91% (2,097,768B) 0x92D89A: log_init() (mem0mem.ic:449)
+| | ->01.91% (2,097,768B) 0x9BB510: innobase_start_or_create_for_mysql() (srv0start.cc:2059)
+| |   ->01.91% (2,097,768B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |     ->01.91% (2,097,768B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |       ->01.91% (2,097,768B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |         ->01.91% (2,097,768B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |           ->01.91% (2,097,768B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |             ->01.91% (2,097,768B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |               ->01.91% (2,097,768B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                 
+| ->00.33% (363,952B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->09.47% (10,397,925B) 0x9E1AF6: ut_malloc_low(unsigned long, unsigned long) (ut0mem.cc:104)
+| ->03.91% (4,294,040B) 0xA84A64: hash0_create(unsigned long) (hash0hash.cc:306)
+| | ->02.14% (2,352,480B) 0xA82EF4: ha_create_func(unsigned long, unsigned long, unsigned long) (ha0ha.cc:67)
+| | | ->02.02% (2,213,368B) 0xA0E88B: btr_search_sys_create(unsigned long) (btr0sea.cc:202)
+| | | | ->02.02% (2,213,368B) 0xA18EBE: buf_pool_init(unsigned long, unsigned long) (buf0buf.cc:1543)
+| | | |   ->02.02% (2,213,368B) 0x9BB3AE: innobase_start_or_create_for_mysql() (srv0start.cc:2032)
+| | | |     ->02.02% (2,213,368B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| | | |       ->02.02% (2,213,368B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| | | |         ->02.02% (2,213,368B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| | | |           ->02.02% (2,213,368B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| | | |             ->02.02% (2,213,368B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| | | |               ->02.02% (2,213,368B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| | | |                 ->02.02% (2,213,368B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | | |                   
+| | | ->00.13% (139,112B) in 1+ places, all below ms_print's threshold (01.00%)
+| | | 
+| | ->01.77% (1,941,560B) in 11 places, all below massif's threshold (01.00%)
+| |   
+| ->02.93% (3,215,488B) 0x95005E: os_event_create() (os0sync.cc:370)
+| | ->02.93% (3,215,488B) in 33 places, all below massif's threshold (01.00%)
+| |   
+| ->01.93% (2,113,536B) 0xA23C49: buf_dblwr_init(unsigned char*) (buf0dblwr.cc:163)
+| | ->01.93% (2,113,536B) 0xA247EE: buf_dblwr_init_or_load_pages(int, char*, bool) (buf0dblwr.cc:393)
+| |   ->01.93% (2,113,536B) 0x9BC35F: innobase_start_or_create_for_mysql() (srv0start.cc:1054)
+| |     ->01.93% (2,113,536B) 0x8FD28F: innobase_init(void*) (ha_innodb.cc:3762)
+| |       ->01.93% (2,113,536B) 0x5990C6: ha_initialize_handlerton(st_plugin_int*) (handler.cc:696)
+| |         ->01.93% (2,113,536B) 0x6E517F: plugin_initialize(st_plugin_int*) (sql_plugin.cc:1137)
+| |           ->01.93% (2,113,536B) 0x6EB5AF: plugin_init(int*, char**, int) (sql_plugin.cc:1431)
+| |             ->01.93% (2,113,536B) 0x591A2B: init_server_components() (mysqld.cc:5169)
+| |               ->01.93% (2,113,536B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |                 ->01.93% (2,113,536B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |                   
+| ->00.71% (774,861B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->00.32% (352,073B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 63    100,338,526      109,976,968      109,670,763       306,205            0
+ 64    101,393,004      107,462,336      107,183,153       279,183            0
+ 65    102,582,632      107,438,176      107,160,073       278,103            0
+ 66    103,633,935       90,399,264       90,144,648       254,616            0
+ 67    104,685,135       90,002,144       89,770,888       231,256            0
+ 68    105,736,335       89,605,024       89,397,128       207,896            0
+ 69    106,787,423       88,239,872       88,058,584       181,288            0
+ 70    107,838,685       87,766,456       87,613,016       153,440            0
+ 71    108,889,947       87,293,040       87,167,448       125,592            0
+ 72    109,941,209       86,819,624       86,721,880        97,744            0
+99.89% (86,721,880B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->88.49% (76,824,776B) 0xB15288: pfs_malloc(unsigned long, int) (pfs_global.cc:57)
+| ->17.50% (15,190,272B) 0xB1B391: init_table_share(unsigned int) (pfs_instr_class.cc:344)
+| | ->17.50% (15,190,272B) 0xB1E992: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:88)
+| |   ->17.50% (15,190,272B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->17.50% (15,190,272B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->11.38% (9,880,800B) 0xB110BF: PFS_connection_slice::alloc_statements_slice(unsigned int) (pfs_con_slice.cc:83)
+| | ->03.79% (3,293,600B) 0xB15645: init_host(PFS_global_param const*) (pfs_host.cc:94)
+| | | ->03.79% (3,293,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->03.79% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->03.79% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->03.79% (3,293,600B) 0xB20BB5: init_user(PFS_global_param const*) (pfs_user.cc:94)
+| | | ->03.79% (3,293,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->03.79% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->03.79% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->03.79% (3,293,600B) 0xB103F5: init_account(PFS_global_param const*) (pfs_account.cc:97)
+| |   ->03.79% (3,293,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->03.79% (3,293,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->03.79% (3,293,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->10.93% (9,485,568B) 0xB1692C: init_instruments(PFS_global_param const*) (pfs_instr.cc:407)
+| | ->10.93% (9,485,568B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->10.93% (9,485,568B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->10.93% (9,485,568B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->06.79% (5,898,240B) 0xB168D0: init_instruments(PFS_global_param const*) (pfs_instr.cc:389)
+| | ->06.79% (5,898,240B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->06.79% (5,898,240B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->06.79% (5,898,240B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->06.58% (5,716,480B) 0xB16A9D: init_instruments(PFS_global_param const*) (pfs_instr.cc:325)
+| | ->06.58% (5,716,480B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->06.58% (5,716,480B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->06.58% (5,716,480B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->05.90% (5,123,240B) in 28 places, all below massif's threshold (01.00%)
+| | 
+| ->05.90% (5,120,000B) 0xB11B6C: init_digest(PFS_global_param const*) (pfs_digest.cc:90)
+| | ->05.90% (5,120,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->05.90% (5,120,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->05.90% (5,120,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->04.23% (3,676,800B) 0xB10F7F: PFS_connection_slice::alloc_waits_slice(unsigned int) (pfs_con_slice.cc:43)
+| | ->01.41% (1,225,600B) 0xB1568D: init_host(PFS_global_param const*) (pfs_host.cc:78)
+| | | ->01.41% (1,225,600B) 0xB1EA7C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:106)
+| | |   ->01.41% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.41% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.41% (1,225,600B) 0xB20BFD: init_user(PFS_global_param const*) (pfs_user.cc:78)
+| | | ->01.41% (1,225,600B) 0xB1EA9C: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:108)
+| | |   ->01.41% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| | |     ->01.41% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| | |       
+| | ->01.41% (1,225,600B) 0xB1043D: init_account(PFS_global_param const*) (pfs_account.cc:81)
+| |   ->01.41% (1,225,600B) 0xB1EABC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:110)
+| |     ->01.41% (1,225,600B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |       ->01.41% (1,225,600B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |         
+| ->04.07% (3,529,728B) 0xB167BB: init_instruments(PFS_global_param const*) (pfs_instr.cc:356)
+| | ->04.07% (3,529,728B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->04.07% (3,529,728B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->04.07% (3,529,728B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->03.40% (2,949,120B) 0xB16713: init_instruments(PFS_global_param const*) (pfs_instr.cc:435)
+| | ->03.40% (2,949,120B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->03.40% (2,949,120B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->03.40% (2,949,120B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.95% (2,560,000B) 0xB11B05: init_digest(PFS_global_param const*) (pfs_digest.cc:73)
+| | ->02.95% (2,560,000B) 0xB1EADC: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:112)
+| |   ->02.95% (2,560,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.95% (2,560,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.36% (2,048,000B) 0xB1407D: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:63)
+| | ->02.36% (2,048,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+| |   ->02.36% (2,048,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.36% (2,048,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->02.07% (1,800,128B) 0xB1666D: init_instruments(PFS_global_param const*) (pfs_instr.cc:311)
+| | ->02.07% (1,800,128B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->02.07% (1,800,128B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->02.07% (1,800,128B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.66% (1,440,000B) 0xB1101F: PFS_connection_slice::alloc_stages_slice(unsigned int) (pfs_con_slice.cc:63)
+| | ->01.66% (1,440,000B) in 3 places, all below massif's threshold (01.00%)
+| |   
+| ->01.59% (1,382,400B) 0xB1685D: init_instruments(PFS_global_param const*) (pfs_instr.cc:377)
+| | ->01.59% (1,382,400B) 0xB1E9D7: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:93)
+| |   ->01.59% (1,382,400B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+| |     ->01.59% (1,382,400B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |       
+| ->01.18% (1,024,000B) 0xB1412B: init_events_statements_history_long(unsigned long) (pfs_events_statements.cc:78)
+|   ->01.18% (1,024,000B) 0xB1EA0D: initialize_performance_schema(PFS_global_param*) (pfs_server.cc:99)
+|     ->01.18% (1,024,000B) 0x59283B: mysqld_main(int, char**) (mysqld.cc:5617)
+|       ->01.18% (1,024,000B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+|         
+->10.14% (8,807,660B) 0x8CD2C3: my_malloc (my_malloc.c:38)
+| ->07.90% (6,858,752B) 0x8D8CA9: my_large_malloc (my_largepage.c:64)
+| | ->07.90% (6,858,752B) 0x8BD8D1: init_key_cache (mf_keycache.c:431)
+| |   ->07.90% (6,858,752B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |     ->07.90% (6,858,752B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |       ->07.90% (6,858,752B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |         ->07.90% (6,858,752B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |           ->07.90% (6,858,752B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |             
+| ->01.76% (1,529,632B) 0x8BD8E7: init_key_cache (mf_keycache.c:438)
+| | ->01.76% (1,529,632B) 0x59EC6A: ha_init_key_cache (handler.cc:5481)
+| |   ->01.76% (1,529,632B) 0x63F95A: process_key_caches(int (*)(char const*, st_key_cache*)) (keycaches.cc:128)
+| |     ->01.76% (1,529,632B) 0x5919B5: init_server_components() (mysqld.cc:5152)
+| |       ->01.76% (1,529,632B) 0x592A8B: mysqld_main(int, char**) (mysqld.cc:5811)
+| |         ->01.76% (1,529,632B) 0x3601E1ED5B: (below main) (in /lib64/libc-2.12.so)
+| |           
+| ->00.48% (419,276B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->01.25% (1,089,444B) in 103 places, all below massif's threshold (01.00%)
+  
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 73    110,992,471       86,346,208       86,276,312        69,896            0
+ 74    112,043,883       77,243,128       77,227,830        15,298            0

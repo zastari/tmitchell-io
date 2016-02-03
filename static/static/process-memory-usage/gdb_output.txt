@@ -1,0 +1,391 @@
+Type commands for breakpoint(s) 1, one per line.
+End with a line saying just "end".
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=12800, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1b19f in init_sync_class (mutex_class_sizing=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr_class.cc:266
+266	    rwlock_class_array= PFS_MALLOC_ARRAY(rwlock_class_max, sizeof(PFS_rwlock_class),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=20480, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1b16a in init_sync_class (mutex_class_sizing=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr_class.cc:274
+274	    cond_class_array= PFS_MALLOC_ARRAY(cond_class_max, sizeof(PFS_cond_class),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=9600, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1b2fb in init_thread_class (thread_class_sizing=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr_class.cc:311
+311	    thread_class_array= PFS_MALLOC_ARRAY(thread_class_max, sizeof(PFS_thread_class),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=15190272, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1b393 in init_table_share (table_share_sizing=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr_class.cc:344
+344	    table_share_array= PFS_MALLOC_ARRAY(table_share_max, sizeof(PFS_table_share),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=16000, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1b59b in init_file_class (file_class_sizing=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr_class.cc:484
+484	    file_class_array= PFS_MALLOC_ARRAY(file_class_max, sizeof(PFS_file_class),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=38400, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1b65b in init_stage_class (stage_class_sizing=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr_class.cc:518
+518	    stage_class_array= PFS_MALLOC_ARRAY(stage_class_max, sizeof(PFS_stage_class),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=34368, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1b70b in init_statement_class (statement_class_sizing=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr_class.cc:552
+552	    statement_class_array= PFS_MALLOC_ARRAY(statement_class_max, sizeof(PFS_statement_class),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=3200, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1b7bb in init_socket_class (socket_class_sizing=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr_class.cc:586
+586	    socket_class_array= PFS_MALLOC_ARRAY(socket_class_max, sizeof(PFS_socket_class),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=764160, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1663a in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:290
+290	    mutex_array= PFS_MALLOC_ARRAY(mutex_max, sizeof(PFS_mutex), PFS_mutex, MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=602496, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1660f in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:297
+297	    rwlock_array= PFS_MALLOC_ARRAY(rwlock_max, sizeof(PFS_rwlock), PFS_rwlock, MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=176896, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b165df in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:304
+304	    cond_array= PFS_MALLOC_ARRAY(cond_max, sizeof(PFS_cond), PFS_cond, MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=1800128, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1666f in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:311
+311	    file_array= PFS_MALLOC_ARRAY(file_max, sizeof(PFS_file), PFS_file, MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=262144, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1614f in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:318
+318	    file_handle_array= PFS_MALLOC_ARRAY(file_handle_max, sizeof(PFS_file*), PFS_file*, MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=5716480, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b16a9f in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:325
+325	    table_array= PFS_MALLOC_ARRAY(table_max, sizeof(PFS_table), PFS_table, MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=73600, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b16a77 in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:332
+332	    socket_array= PFS_MALLOC_ARRAY(socket_max, sizeof(PFS_socket), PFS_socket, MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=811008, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b16767 in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:339
+339	    thread_array= PFS_MALLOC_ARRAY(thread_max, sizeof(PFS_thread), PFS_thread, MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=529920, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b16790 in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:347
+347	      PFS_MALLOC_ARRAY(thread_waits_history_sizing, sizeof(PFS_events_waits), PFS_events_waits,
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=3529728, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b167bd in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:356
+356	      PFS_MALLOC_ARRAY(thread_instr_class_waits_sizing,
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=253440, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b16832 in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:368
+368	      PFS_MALLOC_ARRAY(thread_stages_history_sizing, sizeof(PFS_events_stages), PFS_events_stages,
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=1382400, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1685f in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:377
+377	      PFS_MALLOC_ARRAY(thread_instr_class_stages_sizing,
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=5898240, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b168d2 in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:389
+389	      PFS_MALLOC_ARRAY(thread_statements_history_sizing, sizeof(PFS_events_statements),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=589824, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b16901 in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:398
+398	      PFS_MALLOC_ARRAY(thread_statements_stack_sizing, sizeof(PFS_events_statements),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=9485568, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1692e in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:407
+407	      PFS_MALLOC_ARRAY(thread_instr_class_statements_sizing,
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=147456, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b16a4f in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:419
+419	      (char *)pfs_malloc(thread_session_connect_attrs_sizing, MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=294912, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1673d in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:427
+427	      (unsigned char *)pfs_malloc(current_digest_tokens_sizing, MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=2949120, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b16715 in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:435
+435	      (unsigned char *)pfs_malloc(history_digest_tokens_sizing, MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=4800, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1669f in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:479
+479	      PFS_MALLOC_ARRAY(stage_class_max,
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=32936, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b164b7 in init_instruments (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_instr.cc:491
+491	      PFS_MALLOC_ARRAY(statement_class_max,
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=184000, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b149db in init_events_waits_history_long (events_waits_history_long_sizing=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_events_waits.cc:66
+66	    PFS_MALLOC_ARRAY(events_waits_history_long_size, sizeof(PFS_events_waits),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=88000, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b13a9b in init_events_stages_history_long (events_stages_history_long_sizing=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_events_stages.cc:62
+62	    PFS_MALLOC_ARRAY(events_stages_history_long_size, sizeof(PFS_events_stages),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=2048000, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1407f in init_events_statements_history_long (events_statements_history_long_sizing=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_events_statements.cc:63
+63	    PFS_MALLOC_ARRAY(events_statements_history_long_size, sizeof(PFS_events_statements),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=1024000, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1412d in init_events_statements_history_long (events_statements_history_long_sizing=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_events_statements.cc:78
+78	      PFS_MALLOC_ARRAY(events_statements_history_long_size, digest_text_size, 
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=25600, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1f0ee in init_setup_actor (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_setup_actor.cc:63
+63	    setup_actor_array= PFS_MALLOC_ARRAY(setup_actor_max, sizeof(PFS_setup_actor),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=44800, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1fa0e in init_setup_object (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_setup_object.cc:58
+58	    setup_object_array= PFS_MALLOC_ARRAY(setup_object_max, sizeof(PFS_setup_object),
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=12800, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b1561a in init_host (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_host.cc:69
+69	    host_array= PFS_MALLOC_ARRAY(host_max, sizeof(PFS_host), PFS_host,
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=1225600, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b10f81 in PFS_connection_slice::alloc_waits_slice (sizing=38300) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_con_slice.cc:43
+43	                            MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=480000, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b11021 in PFS_connection_slice::alloc_stages_slice (sizing=15000) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_con_slice.cc:63
+63	                            MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=3293600, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b110c1 in PFS_connection_slice::alloc_statements_slice (sizing=17900) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_con_slice.cc:83
+83	                            MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=12800, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b20b8a in init_user (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_user.cc:69
+69	    user_array= PFS_MALLOC_ARRAY(user_max, sizeof(PFS_user), PFS_user,
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=1225600, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b10f81 in PFS_connection_slice::alloc_waits_slice (sizing=38300) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_con_slice.cc:43
+43	                            MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=480000, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b11021 in PFS_connection_slice::alloc_stages_slice (sizing=15000) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_con_slice.cc:63
+63	                            MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=3293600, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b110c1 in PFS_connection_slice::alloc_statements_slice (sizing=17900) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_con_slice.cc:83
+83	                            MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=25600, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b103ca in init_account (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_account.cc:72
+72	    account_array= PFS_MALLOC_ARRAY(account_max, sizeof(PFS_account), PFS_account,
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=1225600, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b10f81 in PFS_connection_slice::alloc_waits_slice (sizing=38300) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_con_slice.cc:43
+43	                            MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=480000, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b11021 in PFS_connection_slice::alloc_stages_slice (sizing=15000) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_con_slice.cc:63
+63	                            MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=3293600, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b110c1 in PFS_connection_slice::alloc_statements_slice (sizing=17900) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_con_slice.cc:83
+83	                            MYF(MY_ZEROFILL));
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=2560000, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b11b07 in init_digest (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_digest.cc:73
+73	    PFS_MALLOC_ARRAY(digest_max,
+Continuing.
+
+Breakpoint 1, pfs_malloc (size=5120000, flags=32) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_global.cc:57
+57	  if (unlikely(posix_memalign(& ptr, PFS_ALIGNEMENT, size)))
+#1  0x0000000000b11b6e in init_digest (param=Unhandled dwarf expression opcode 0xf3
+) at /usr/src/debug/percona-server-5.6.28-76.1/storage/perfschema/pfs_digest.cc:90
+90	      PFS_MALLOC_ARRAY(digest_max,
+Continuing.
+[New Thread 0x7ffff23d7700 (LWP 22741)]
+[New Thread 0x7fffe3cff700 (LWP 22742)]
+[New Thread 0x7fffe32fe700 (LWP 22743)]
+[New Thread 0x7fffe28fd700 (LWP 22744)]
+[New Thread 0x7fffe1efc700 (LWP 22745)]
+[New Thread 0x7fffe14fb700 (LWP 22746)]
+[New Thread 0x7fffe0afa700 (LWP 22747)]
+[New Thread 0x7fffe00f9700 (LWP 22748)]
+[New Thread 0x7fffdf6f8700 (LWP 22749)]
+[New Thread 0x7fffdecf7700 (LWP 22750)]
+[New Thread 0x7fffde2f6700 (LWP 22751)]
+[New Thread 0x7fffdd249700 (LWP 22752)]
+[New Thread 0x7fffd7fff700 (LWP 22753)]
+[Thread 0x7fffdd249700 (LWP 22752) exited]
+[New Thread 0x7fffdd249700 (LWP 22754)]
+[New Thread 0x7fffd75fe700 (LWP 22755)]
+[New Thread 0x7fffd6bfd700 (LWP 22756)]
+[New Thread 0x7fffd61fc700 (LWP 22757)]
+[New Thread 0x7fffd57fb700 (LWP 22758)]
+[New Thread 0x7fffd4dfa700 (LWP 22759)]
+[New Thread 0x7fffd43f9700 (LWP 22760)]
+[New Thread 0x7fffd39f8700 (LWP 22761)]
+[New Thread 0x7fffd2ff7700 (LWP 22762)]
+[New Thread 0x7ffff02f4700 (LWP 22763)]
+[New Thread 0x7ffff02b3700 (LWP 22765)]
+[Thread 0x7ffff02b3700 (LWP 22765) exited]
+[New Thread 0x7ffff0272700 (LWP 22766)]
+[Thread 0x7ffff23d7700 (LWP 22741) exited]
+[Thread 0x7fffd2ff7700 (LWP 22762) exited]
+[Thread 0x7fffd39f8700 (LWP 22761) exited]
+[Thread 0x7fffd7fff700 (LWP 22753) exited]
+[Thread 0x7fffd43f9700 (LWP 22760) exited]
+[Thread 0x7fffdd249700 (LWP 22754) exited]
+[Thread 0x7fffd75fe700 (LWP 22755) exited]
+[Thread 0x7fffd61fc700 (LWP 22757) exited]
+[Thread 0x7fffd57fb700 (LWP 22758) exited]
+[Thread 0x7fffd6bfd700 (LWP 22756) exited]
+[Thread 0x7fffe0afa700 (LWP 22747) exited]
+[Thread 0x7fffde2f6700 (LWP 22751) exited]
+[Thread 0x7fffe14fb700 (LWP 22746) exited]
+[Thread 0x7fffe3cff700 (LWP 22742) exited]
+[Thread 0x7fffdecf7700 (LWP 22750) exited]
+[Thread 0x7fffe1efc700 (LWP 22745) exited]
+[Thread 0x7fffdf6f8700 (LWP 22749) exited]
+[Thread 0x7fffe00f9700 (LWP 22748) exited]
+[Thread 0x7fffe32fe700 (LWP 22743) exited]
+[Thread 0x7fffe28fd700 (LWP 22744) exited]
+[Thread 0x7fffd4dfa700 (LWP 22759) exited]
+[Switching to Thread 0x7ffff02f4700 (LWP 22763)]
+Couldn't get registers: No such process.
+Continuing.
+Couldn't get registers: No such process.
+Continuing.
+Couldn't get registers: No such process.
+Continuing.
+Couldn't get registers: No such process.
+A debugging session is active.
+
+	Inferior 1 [process 22738] will be killed.
+
+Quit anyway? (y or n) Quitting: Couldn't get registers: No such process.
